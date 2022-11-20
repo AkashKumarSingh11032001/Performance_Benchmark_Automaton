@@ -11,6 +11,6 @@ ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect(host, username=user, password=passd)
 sftp = ssh.open_sftp()
 sftp.put("text.txt", "text.txt") # copy file from host to remote
-sftp.get("text.txt", "text.txt") # copy file from remote to host
+sftp.get("text.txt", "text2.txt") # copy file from remote to host
 sftp.close()
 ssh.close()
