@@ -2,7 +2,7 @@ from conectionBetweenTwoHost import HostsConnectionandCommandExecution
 from conectionBetweenTwoHost import HostsFileTransfer
 
 
-def bpc1(server, user, passd, dirx, doc):
+def burst_randwr_oio(server, user, passd, dirx, doc):
     locFile = doc
     HostsFileTransfer(
         server=server,
@@ -31,7 +31,7 @@ def bpc1(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="Performance_Benchmark_Automaton/logs/res.log",
+        localFileNameWithLocation="Performance_Benchmark_Automaton/logs/burst_randwr_oio.log",
         remoteFileNameWithLocation="/root/test/res.log",
         copyToServer=False,
     )
