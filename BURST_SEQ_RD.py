@@ -2,7 +2,7 @@ from conectionBetweenTwoHost import HostsConnectionandCommandExecution
 from conectionBetweenTwoHost import HostsFileTransfer
 
 
-def burst_seqwr(server, user, passd, dirx, doc):
+def burst_seqrd(server, user, passd, dirx, doc):
     locFile = doc
     HostsFileTransfer(
         server=server,
@@ -31,7 +31,7 @@ def burst_seqwr(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="Performance_Benchmark_Automaton/logs/burst_seqwr.log",
+        localFileNameWithLocation="Performance_Benchmark_Automaton/logs/burst_seqrd.log",
         remoteFileNameWithLocation="/root/test/res.log",
         copyToServer=False,
     )
