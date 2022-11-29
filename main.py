@@ -10,6 +10,7 @@ from BURST_RAND_RD_OIO import burst_randrd_oio
 from SUS_SEQ_WR import sus_seqwr
 from SUS_SEQ_RD import sus_seqrd
 from supportFunction import status
+from ControlerIdentify import identifyCtrl
 
 
 fio = [
@@ -32,11 +33,37 @@ server = "10.207.48.244"  # "10.207.48.182"
 user = "root"
 passd = "12"
 
-dirx = "/root/fio/"
+dirx = "/root/test/"
+
+# <------------------> Controler Identify  ------------------>
+identifyCtrl(server, user, passd, dirx)
+status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
+# HostsConnectionandCommandExecution(
+#     server=server,
+#     username=user,
+#     password=passd,
+#     directoryx=dirx,
+#     commandx="nvme id-ctrl /dev/nvme0 >> FirmwareData.txt",
+# )   
+# HostsConnectionandCommandExecution(
+#     server=server,
+#     username=user,
+#     password=passd,
+#     directoryx=dirx,
+#     commandx="nvme list >> capicity.txt",
+# )   
+# HostsFileTransfer(
+#     server=server,
+#     username=user,
+#     password=passd,
+#     localFileNameWithLocation="logs\\ctrl_res.txt",
+#     remoteFileNameWithLocation="/root/test/controlerData.txt",
+#     copyToServer=False,
+# )
 
 # <------------------> BPC1 ------------------>
-bpc1(server, user, passd, dirx, y[0])
-status("<--------- Precondition BPC1 is been implemented! --------->", 1)
+# bpc1(server, user, passd, dirx, y[0])
+# status("<--------- Precondition BPC1 is been implemented! --------->", 1)
 
 # # <--------- BURST SEQUENTIAL WRITE --------->
 # burst_seqwr(server, user, passd, dirx, fio[1])
@@ -94,28 +121,28 @@ status("<--------- Precondition BPC1 is been implemented! --------->", 1)
 #     commandx="chmod -R 777 a.txt",
 # )
 
-# # x = HostsConnectionandCommandExecution(
-# #     server=server,
-# #     username=user,
-# #     password=passd,
-# #     directoryx=dirx,
-# #     commandx="cat a.txt",
-# # )
-# # print(x)
+# x = HostsConnectionandCommandExecution(
+#     server=server,
+#     username=user,
+#     password=passd,
+#     directoryx=dirx,
+#     commandx="cat a.txt",
+# )
+# print(x)
 
 # HostsConnectionandCommandExecution(
 #     server=server,
 #     username=user,
 #     password=passd,
 #     directoryx=dirx,
-#     commandx="fio a.txt --eta-newline=1 --eta=always | tee res.log",
+#     commandx="( nvme id-ctrl /dev/nvme0 ; nvme list ) >> controlerData.txt",
 # )
 
 # HostsFileTransfer(
 #     server=server,
 #     username=user,
 #     password=passd,
-#     localFileNameWithLocation="Performance_Benchmark_Automaton/logs/res.log",
-#     remoteFileNameWithLocation="/root/test/res.log",
+#     localFileNameWithLocation="Performance_Benchmark_Automaton/logs/ctrl_res.txt",
+#     remoteFileNameWithLocation="/root/test/controlerData.txt",
 #     copyToServer=False,
 # )
