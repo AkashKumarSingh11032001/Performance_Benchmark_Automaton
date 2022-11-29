@@ -40,7 +40,7 @@ dirx = "/root/test/"
 
 # ............................. <<< Controler Identify >>>  ............................. #
 identifyCtrl(server, user, passd, dirx)
-data_a = parseControlerData()
+data_a = parseControlerData() # single list data
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
 
@@ -84,12 +84,15 @@ status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
 
 
 # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
-data_b = performanceEntry()
+data_b = performanceEntry() # list of list data
 status("<--------- Performance Entry Data Collection Completed! --------->", 1)
 
 # ............................. <<< SCRIPT ENTRY DATA COLLECTION >>> ............................. #
-data_c = infoScriptEntry(fio)
+data_c = infoScriptEntry(fio) # list of list data
 status("<--------- Script Entry Data Completed! --------->", 1)
+
+# ............................. <<< MERGING DATA[A-C] >>> ............................. #
+final = [data_a, data_b, data_c]
 
 
 # create a list of cmd to perform in list and pass them one by one int Exection.

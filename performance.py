@@ -47,6 +47,7 @@ def listToCSV(lis):
 
 
 def iterFile(mylines, fileLoc):
+    
     no_of_jobs_files = 1
 
     for indx in range(len(mylines)):
@@ -110,19 +111,21 @@ def iterFile(mylines, fileLoc):
 
 def performanceEntry():
     files = [
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_seqwr.txt",
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_seqrd.txt",
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randwr.txt",
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randrd.txt",
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\sus_seqwr.txt",
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\sus_seqrd.txt",
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randwr_oio.txt",
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randrd_oio.txt",
+        "logs\\burst_seqwr.log",
+        "logs\\burst_seqrd.log",
+        "logs\\burst_randwr.log",
+        "logs\\burst_randrd.log",
+        "logs\\sus_seqwr.log",
+        "logs\\sus_seqrd.log",
+        "logs\\burst_randwr_oio.log",
+        "logs\\burst_randrd_oio.log",
     ]
+    xt = "logs\\burst_seqrd.log"
+    
     points_ratio = []
     points_ls = []
     res = []
-    for j in range(2):
+    for j in range(8):
         mylines = []
         with open(files[j]) as fp:
             for x in fp:
@@ -155,5 +158,5 @@ def performanceEntry():
     return proData_1
 
 
-# data_1 = performanceEntry()
-# print(data_1)
+data_1 = performanceEntry()
+print(data_1)
