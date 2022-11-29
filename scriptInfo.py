@@ -17,34 +17,38 @@ def element(pattern,mylines):
             
     return res
 
-def infoScript():
+def infoScriptEntry(fio):
 
-    file = ["fioScripts\\burst_seqrd.txt"]  
+    file = fio  
 
     pattern_1 = re.compile(r'^bs=')
     pattern_2 = re.compile(r'^iodepth=')
     pattern_3 = re.compile(r'^threads=')
     pattern_4 = re.compile(r'^size=')
     pattern = [pattern_1, pattern_2, pattern_3, pattern_4]  
+    
+    proData_3 = []
+    
+    for i in range(file):
+        mylines = []
+        with open(file[i]) as fp:
+            for x in fp:
+                mylines.append(x)
 
-    mylines = []
-    with open(file[0]) as fp:
-        for x in fp:
-            mylines.append(x)
+        res = element(pattern,mylines)
+        size = res[0][-4:-1]
+        block = res[1][-6:-1]
+        iodepth = res[2][-2:-1]
+        threads = res[3][-2:-1] 
+
+        info = [size,block,iodepth,threads]
+        proData_3.append(info)
+    
+    return proData_3
 
 
-    res = element(pattern,mylines)
-    size = res[0][-4:-1]
-    block = res[1][-6:-1]
-    iodepth = res[2][-2:-1]
-    threads = res[3][-2:-1] 
-
-    info = [size,block,iodepth,threads]
-    return info
-
-
-x = infoScript()
-print(x)
+# x = infoScript()
+# print(x)
         
 # print([ele for ele in mylines if "bs=" in ele])
         

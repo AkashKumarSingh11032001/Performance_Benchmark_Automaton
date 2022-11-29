@@ -24,8 +24,8 @@ def parseControlerData():
     return proData_2
 
 
-data_2 = parseControlerData()
-print(data_2)
+# data_2 = parseControlerData()
+# print(data_2)
 
 
 # workbook = xlsxwriter.Workbook('write_data.xlsx')
