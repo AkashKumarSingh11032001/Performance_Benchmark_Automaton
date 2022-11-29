@@ -7,8 +7,8 @@ from csv import DictWriter
 
 
 def listToCSV(lis):
-    csv_file = "Performance_Benchmark_Automaton\\performance.csv"
-    
+    csv_file = "performance.csv"
+
     field_names = [
         "LEVEL",
         "IOPS(K)",
@@ -37,16 +37,13 @@ def listToCSV(lis):
         "99.9999th": lis[9],
     }
 
-    with open(csv_file , "a") as file:
+    with open(csv_file, "a") as file:
 
         dictwriter_object = DictWriter(file, fieldnames=field_names)
 
         dictwriter_object.writerow(dict)
 
         file.close()
-
-
-
 
 
 def iterFile(mylines, fileLoc):
@@ -95,7 +92,7 @@ def iterFile(mylines, fileLoc):
         string = " ".join(iops)
         start = string.find("(")
         end = string.find(")")
-        iops_res.append(string[start + 1 : end])
+        iops_res.append(string[start + 1: end])
 
         ls = [eval(ele) for ele in iops_res]
         if "usec" in mylines[index + 2]:
@@ -111,11 +108,10 @@ def iterFile(mylines, fileLoc):
     return percentile_res, ls
 
 
-
-def main():
+def performanceEntry():
     files = [
-    "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_seqrd.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randwr.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_seqrd.txt",
     ]
     points_ratio = []
     points_ls = []
@@ -140,13 +136,18 @@ def main():
     iterLen_list_1 = 0
     iterLen_list_2 = len(points_ratio)
 
+    proData_1 = []
     while iterLen_list_2 < (len(points_ratio) * 2):
         Final = res[iterLen_list_2] + res[iterLen_list_1]
         Final = [float(i) for i in Final]
         iterLen_list_2 += 1
         iterLen_list_1 += 1
-        listToCSV(Final)
-        print(Final, "\n")
+        proData_1.append(Final)
+        # listToCSV(Final)
+    
+    # print(proData_1, "\n")
+    return proData_1
 
 
-main()
+data_1 = performanceEntry()
+print(data_1)

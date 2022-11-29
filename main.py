@@ -11,7 +11,7 @@ from SUS_SEQ_WR import sus_seqwr
 from SUS_SEQ_RD import sus_seqrd
 from supportFunction import status
 from ControlerIdentify import identifyCtrl
-
+from parseControler import parseControlerData
 
 fio = [
     "Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"
@@ -37,43 +37,44 @@ dirx = "/root/test/"
 
 # <------------------> Controler Identify  ------------------>
 identifyCtrl(server, user, passd, dirx)
+data_a = parseControlerData()
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
 # <------------------> BPC1 ------------------>
-# bpc1(server, user, passd, dirx, y[0])
-# status("<--------- Precondition BPC1 is been implemented! --------->", 1)
+bpc1(server, user, passd, dirx, y[0])
+status("<--------- Precondition BPC1 is been implemented! --------->", 1)
 
-# # <--------- BURST SEQUENTIAL WRITE --------->
-# burst_seqwr(server, user, passd, dirx, fio[1])
-# status("<--------- BURST SEQUENTIAL WRITE is been implemented! --------->", 1)
+# <--------- BURST SEQUENTIAL WRITE --------->
+burst_seqwr(server, user, passd, dirx, fio[1])
+status("<--------- BURST SEQUENTIAL WRITE is been implemented! --------->", 1)
 
-# # <--------- BURST SEQUENTIAL READ --------->
-# burst_seqrd(server, user, passd, dirx, fio[2])
-# status("<--------- BURST SEQUENTIAL READ is been implemented! --------->", 1)
+# <--------- BURST SEQUENTIAL READ --------->
+burst_seqrd(server, user, passd, dirx, fio[2])
+status("<--------- BURST SEQUENTIAL READ is been implemented! --------->", 1)
 
-# # <--------- BURST RANDOM WRITE --------->
-# burst_randwr(server, user, passd, dirx, fio[3])
-# status("<--------- BURST RANDOM WRITE is been implemented! --------->", 1)
+# <--------- BURST RANDOM WRITE --------->
+burst_randwr(server, user, passd, dirx, fio[3])
+status("<--------- BURST RANDOM WRITE is been implemented! --------->", 1)
 
-# # <--------- BURST RANDOM READ --------->
-# burst_randrd(server, user, passd, dirx, fio[4])
-# status("<--------- BURST RANDOM READ is been implemented! --------->", 1)
+# <--------- BURST RANDOM READ --------->
+burst_randrd(server, user, passd, dirx, fio[4])
+status("<--------- BURST RANDOM READ is been implemented! --------->", 1)
 
-# # <--------- SUSTAINED SEQUENTIAL WRITE --------->
-# sus_seqwr(server, user, passd, dirx, fio[5])
-# status("<--------- SUSTAINED SEQUENTIAL WRITE is been implemented! --------->", 1)
+# <--------- SUSTAINED SEQUENTIAL WRITE --------->
+sus_seqwr(server, user, passd, dirx, fio[5])
+status("<--------- SUSTAINED SEQUENTIAL WRITE is been implemented! --------->", 1)
 
-# # <--------- SUSTAINED SEQUENTIAL READ --------->
-# sus_seqrd(server, user, passd, dirx, fio[6])
-# status("<--------- SUSTAINED SEQUENTIAL READ is been implemented! --------->", 1)
+# <--------- SUSTAINED SEQUENTIAL READ --------->
+sus_seqrd(server, user, passd, dirx, fio[6])
+status("<--------- SUSTAINED SEQUENTIAL READ is been implemented! --------->", 1)
 
-# # <--------- BURST RANDOM WRITE OIO --------->
-# burst_randwr_oio(server, user, passd, dirx, fio[7])
-# status("<--------- BURST RANDOM WRITE OIO is been implemented! --------->", 1)
+# <--------- BURST RANDOM WRITE OIO --------->
+burst_randwr_oio(server, user, passd, dirx, fio[7])
+status("<--------- BURST RANDOM WRITE OIO is been implemented! --------->", 1)
 
-# # <--------- BURST RANDOM READ OIO --------->
-# burst_randrd_oio(server, user, passd, dirx, fio[8])
-# status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
+# <--------- BURST RANDOM READ OIO --------->
+burst_randrd_oio(server, user, passd, dirx, fio[8])
+status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
 
 
 # create a list of cmd to perform in list and pass them one by one int Exection.
