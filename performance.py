@@ -110,8 +110,15 @@ def iterFile(mylines, fileLoc):
 
 def performanceEntry():
     files = [
-        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randwr.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_seqwr.txt",
         "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_seqrd.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randwr.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randrd.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\sus_seqwr.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\sus_seqrd.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randwr_oio.txt",
+        "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randrd_oio.txt",
+        
     ]
     points_ratio = []
     points_ls = []
