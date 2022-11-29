@@ -1,0 +1,8 @@
+job1: (g=0): rw=write, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=8
+fio-3.16
+Starting 1 thread
+Jobs: 1 (f=1)Jobs: 1 (f=1)Jobs: 1 (f=1): [W(1)][0.2%][w=405MiB/s][w=3240 IOPS][eta 39m:37s]
+Jobs: 1 (f=1): [W(1)][0.2%][w=427MiB/s][w=3413 IOPS][eta 39m:13s]Jobs: 1 (f=1): [W(1)][0.2%][w=436MiB/s][w=3491 IOPS][eta 38m:48s] 
+Jobs: 1 (f=1): [W(1)][0.3%][w=438MiB/s][w=3500 IOPS][eta 38m:30s]Jobs: 1 (f=1): [W(1)][0.3%][w=436MiB/s][w=3491 IOPS][eta 38m:17s] 
+Jobs: 1 (f=1): [W(1)][0.3%][w=433MiB/s][w=3467 IOPS][eta 38m:10s]Jobs: 1 (f=1): [W(1)][0.4%][w=438MiB/s][w=3504 IOPS][eta 38m:02s] 
+Jobs: 1 (f=1): [W(1)][0.4%][w=440MiB/s][w=3522 IOPS][eta 37m:53s]

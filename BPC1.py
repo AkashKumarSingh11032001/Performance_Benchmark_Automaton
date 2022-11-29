@@ -9,7 +9,7 @@ def bpc1(server, user, passd, dirx, doc):
         username=user,
         password=passd,
         localFileNameWithLocation=locFile,
-        remoteFileNameWithLocation=f"/root/test/a.txt",  # /home/qa/test/preCondition/bpc0.sh",
+        remoteFileNameWithLocation=f"/root/fio/a.txt",  # /home/qa/test/preCondition/bpc0.sh",
     )
     HostsConnectionandCommandExecution(
         server=server,
@@ -32,6 +32,6 @@ def bpc1(server, user, passd, dirx, doc):
         username=user,
         password=passd,
         localFileNameWithLocation="Performance_Benchmark_Automaton/logs/bpc1.log",
-        remoteFileNameWithLocation="/root/test/res.log",
+        remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )
