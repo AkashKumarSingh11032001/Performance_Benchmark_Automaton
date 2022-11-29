@@ -38,13 +38,13 @@ passd = "12"
 
 dirx = "/root/test/"
 
-# ............................. Controler Identify  ............................. #
+# ............................. <<< Controler Identify >>>  ............................. #
 identifyCtrl(server, user, passd, dirx)
 data_a = parseControlerData()
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
 
-# ............................. FIO SCRIPT EXECUTION ............................. #
+# ............................. <<< FIO SCRIPT EXECUTION >>>............................. #
 
 # <------------------> BPC1 ------------------>
 bpc1(server, user, passd, dirx, bpc_1)
@@ -83,18 +83,13 @@ burst_randrd_oio(server, user, passd, dirx, fio[7])
 status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
 
 
-# ............................. PERFORMANCE ENTRY DATA COLLECTION ............................. #
+# ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
 data_b = performanceEntry()
 status("<--------- Performance Entry Data Collection Completed! --------->", 1)
 
-# ............................. SCRIPT ENTRY DATA COLLECTION ............................. #
+# ............................. <<< SCRIPT ENTRY DATA COLLECTION >>> ............................. #
 data_c = infoScriptEntry(fio)
 status("<--------- Script Entry Data Completed! --------->", 1)
-
-
-
-
-
 
 
 # create a list of cmd to perform in list and pass them one by one int Exection.
