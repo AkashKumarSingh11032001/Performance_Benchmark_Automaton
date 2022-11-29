@@ -38,28 +38,6 @@ dirx = "/root/test/"
 # <------------------> Controler Identify  ------------------>
 identifyCtrl(server, user, passd, dirx)
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
-# HostsConnectionandCommandExecution(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     directoryx=dirx,
-#     commandx="nvme id-ctrl /dev/nvme0 >> FirmwareData.txt",
-# )   
-# HostsConnectionandCommandExecution(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     directoryx=dirx,
-#     commandx="nvme list >> capicity.txt",
-# )   
-# HostsFileTransfer(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     localFileNameWithLocation="logs\\ctrl_res.txt",
-#     remoteFileNameWithLocation="/root/test/controlerData.txt",
-#     copyToServer=False,
-# )
 
 # <------------------> BPC1 ------------------>
 # bpc1(server, user, passd, dirx, y[0])

@@ -15,7 +15,7 @@ def identifyCtrl(server, user, passd, dirx):
         username=user,
         password=passd,
         directoryx=dirx,
-        commandx="(nvme id-ctrl /dev/nvme0 ; nvme list ) >> controlerData.txt",
+        commandx="nvme list >> controlerData.txt",
     )   
     HostsFileTransfer(
         server=server,
