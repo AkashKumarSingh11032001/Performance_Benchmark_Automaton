@@ -118,7 +118,6 @@ def performanceEntry():
         "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\sus_seqrd.txt",
         "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randwr_oio.txt",
         "C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\logs\\burst_randrd_oio.txt",
-        
     ]
     points_ratio = []
     points_ls = []
@@ -156,5 +155,5 @@ def performanceEntry():
     return proData_1
 
 
-data_1 = performanceEntry()
-print(data_1)
+# data_1 = performanceEntry()
+# print(data_1)

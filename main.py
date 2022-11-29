@@ -12,6 +12,7 @@ from SUS_SEQ_RD import sus_seqrd
 from supportFunction import status
 from ControlerIdentify import identifyCtrl
 from parseControler import parseControlerData
+from performance import performanceEntry
 
 fio = [
     "Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"
@@ -35,10 +36,13 @@ passd = "12"
 
 dirx = "/root/test/"
 
-# <------------------> Controler Identify  ------------------>
+# ............................. Controler Identify  ............................. #
 identifyCtrl(server, user, passd, dirx)
 data_a = parseControlerData()
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
+
+
+# ............................. FIO SCRIPT EXECUTION ............................. #
 
 # <------------------> BPC1 ------------------>
 bpc1(server, user, passd, dirx, y[0])
@@ -75,6 +79,17 @@ status("<--------- BURST RANDOM WRITE OIO is been implemented! --------->", 1)
 # <--------- BURST RANDOM READ OIO --------->
 burst_randrd_oio(server, user, passd, dirx, fio[8])
 status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
+
+
+# ............................. PERFORMANCE ENTRY DATA COLLECTION ............................. #
+data_b = performanceEntry()
+status("<--------- Performance Entry Data Collection Completed! --------->", 1)
+
+# ............................. SCRIPT ENTRY DATA COLLECTION ............................. #
+
+
+
+
 
 
 # create a list of cmd to perform in list and pass them one by one int Exection.
