@@ -22,6 +22,6 @@ def identifyCtrl(server, user, passd, dirx):
         username=user,
         password=passd,
         localFileNameWithLocation= loc,
-        remoteFileNameWithLocation="/root/test/controlerData.txt",
+        remoteFileNameWithLocation="/root/fio/controlerData.txt",
         copyToServer=False,
     )

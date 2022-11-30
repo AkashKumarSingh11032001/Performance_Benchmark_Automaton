@@ -31,7 +31,7 @@ def bpc1(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="Performance_Benchmark_Automaton/logs/bpc1.log",
+        localFileNameWithLocation="logs\\bpc1.log",
         remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )

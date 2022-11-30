@@ -9,7 +9,7 @@ def burst_seqwr(server, user, passd, dirx, doc):
         username=user,
         password=passd,
         localFileNameWithLocation=locFile,
-        remoteFileNameWithLocation=f"/root/test/a.txt",  # /home/qa/test/preCondition/bpc0.sh",
+        remoteFileNameWithLocation=f"/root/fio/a.txt",  # /home/qa/test/preCondition/bpc0.sh",
     )
     HostsConnectionandCommandExecution(
         server=server,
@@ -31,7 +31,7 @@ def burst_seqwr(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="Performance_Benchmark_Automaton/logs/burst_seqwr.log",
-        remoteFileNameWithLocation="/root/test/res.log",
+        localFileNameWithLocation="logs\\burst_seqwr.log",
+        remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )

@@ -15,17 +15,17 @@ from parseControler import parseControlerData
 from performance import performanceEntry
 from scriptInfo import infoScriptEntry
 
-bpc_1 = "Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"
+bpc_1 = "preCondition\\bpc1.txt"
 
 fio = [
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.sh",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.sh",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.sh",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.sh",
-    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.sh",
-    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.sh",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.sh",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.sh",
+    "fioScripts\\burst_seqwr.txt",
+    "fioScripts\\burst_seqrd.txt",
+    "fioScripts\\burst_randwr.txt",
+    "fioScripts\\burst_randrd.txt",
+    "fioScripts\\sus_seqwr.txt",
+    "fioScripts\\sus_seqrd.txt",
+    "fioScripts\\burst_randwr_oio.txt",
+    "fioScripts\\burst_randrd_oio.txt",
 ]
 
 # <--------- testing-fio script --------->
@@ -36,7 +36,7 @@ server = "10.207.48.244"  # "10.207.48.182"
 user = "root"
 passd = "12"
 
-dirx = "/root/test/"
+dirx = "/root/fio/"
 
 # ............................. <<< Controler Identify >>>  ............................. #
 identifyCtrl(server, user, passd, dirx)
@@ -93,6 +93,7 @@ status("<--------- Script Entry Data Completed! --------->", 1)
 
 # ............................. <<< MERGING DATA[A-C] >>> ............................. #
 final = [data_a, data_b, data_c]
+print(final)
 
 
 # create a list of cmd to perform in list and pass them one by one int Exection.
@@ -108,7 +109,7 @@ final = [data_a, data_b, data_c]
 #     username=user,
 #     password=passd,
 #     localFileNameWithLocation=y[0],
-#     remoteFileNameWithLocation="/root/test/a.txt",  # /home/qa/test/preCondition/bpc0.sh",
+#     remoteFileNameWithLocation="/root/fio/a.txt",  # /home/qa/test/preCondition/bpc0.sh",
 # )
 # HostsConnectionandCommandExecution(
 #     server=server,
@@ -140,6 +141,6 @@ final = [data_a, data_b, data_c]
 #     username=user,
 #     password=passd,
 #     localFileNameWithLocation="Performance_Benchmark_Automaton/logs/ctrl_res.txt",
-#     remoteFileNameWithLocation="/root/test/controlerData.txt",
+#     remoteFileNameWithLocation="/root/fio/controlerData.txt",
 #     copyToServer=False,
 # )
