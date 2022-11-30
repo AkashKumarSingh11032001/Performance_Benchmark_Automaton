@@ -29,7 +29,7 @@ def infoScriptEntry(fio):
     
     proData_3 = []
     
-    for i in range(file):
+    for i in range(len(file)):
         mylines = []
         with open(file[i]) as fp:
             for x in fp:

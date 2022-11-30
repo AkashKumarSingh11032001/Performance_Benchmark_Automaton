@@ -85,12 +85,15 @@ def iterFile(mylines, fileLoc):
         percentile_res = np.reshape(percentile_res, (-1, 7))
 
         if "k" not in iops[0]:
-            iops[0] = (iops[0]) / 1000
+            print("if: {0}".format(iops[0]))
+            iops[0] = str(int(iops[0]) / 1000)
         else:
+            print("else: {0}".format(iops[0]))
             iops[0] = iops[0].rstrip(iops[0][-1])
 
         iops_res.append(iops[0])
-        string = " ".join(iops)
+        print(iops)
+        string = "".join(iops_res)
         start = string.find("(")
         end = string.find(")")
         iops_res.append(string[start + 1: end])

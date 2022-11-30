@@ -1,0 +1,33 @@
+job1: (g=0): rw=write, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=8
+fio-3.16
+Starting 1 thread
+Jobs: 1 (f=1)Jobs: 1 (f=1)Jobs: 1 (f=1): [W(1)][36.4%][w=851MiB/s][w=6811 IOPS][eta 00m:07s]
+Jobs: 1 (f=1): [W(1)][40.0%][w=872MiB/s][w=6976 IOPS][eta 00m:06s]Jobs: 1 (f=1): [W(1)][50.0%][w=873MiB/s][w=6987 IOPS][eta 00m:05s] 
+Jobs: 1 (f=1): [W(1)][60.0%][w=857MiB/s][w=6855 IOPS][eta 00m:04s]Jobs: 1 (f=1): [W(1)][72.7%][w=869MiB/s][w=6953 IOPS][eta 00m:03s] 
+Jobs: 1 (f=1): [W(1)][80.0%][w=871MiB/s][w=6969 IOPS][eta 00m:02s]Jobs: 1 (f=1): [W(1)][90.0%][w=873MiB/s][w=6986 IOPS][eta 00m:01s] 
+Jobs: 1 (f=1): [W(1)][100.0%][w=857MiB/s][w=6856 IOPS][eta 00m:00s]
+job1: (groupid=0, jobs=1): err= 0: pid=12374: Wed Nov 30 12:14:25 2022
+  write: IOPS=6924, BW=866MiB/s (908MB/s)(8657MiB/10002msec); 0 zone resets
+    slat (usec): min=3, max=103, avg=29.49, stdev= 9.11
+    clat (usec): min=163, max=7745, avg=1123.03, stdev=556.33
+     lat (usec): min=189, max=7772, avg=1152.94, stdev=554.76
+     lat percentiles (usec):
+     | 50.0000th=[ 1237], 75.0000th=[ 1385], 99.0000th=[ 3916],
+     | 99.9000th=[ 7111], 99.9900th=[ 7635], 99.9990th=[ 7767],
+     | 99.9999th=[ 7767]
+   bw (  KiB/s): min=864256, max=912640, per=99.99%, avg=886250.65, stdev=15448.98, samples=20
+   iops        : min= 6752, max= 7130, avg=6923.80, stdev=120.72, samples=20
+  lat (usec)   : 250=0.40%, 500=9.03%, 750=16.54%, 1000=9.97%
+  lat (msec)   : 2=61.84%, 4=1.40%, 10=0.82%
+  cpu          : usr=15.43%, sys=13.63%, ctx=43700, majf=0, minf=1
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=100.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.1%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,69259,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=8
+
+Run status group 0 (all jobs):
+  WRITE: bw=866MiB/s (908MB/s), 866MiB/s-866MiB/s (908MB/s-908MB/s), io=8657MiB (9078MB), run=10002-10002msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
