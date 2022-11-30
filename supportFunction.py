@@ -57,6 +57,12 @@ def pathConvertion(path):
     supportedPath = path.replace("\\", "\\\\")
     return supportedPath
 
+def pickNum(s):
+    num = ""
+    for c in s:
+        if c.isdigit():
+            num = num+c
+    return num
 
 def status(str, times):
     print(str)

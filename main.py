@@ -22,10 +22,10 @@ fio = [
     "fioScripts\\burst_seqrd.txt",
     "fioScripts\\burst_randwr.txt",
     "fioScripts\\burst_randrd.txt",
-    "fioScripts\\sus_seqwr.txt",
-    "fioScripts\\sus_seqrd.txt",
     "fioScripts\\burst_randwr_oio.txt",
     "fioScripts\\burst_randrd_oio.txt",
+    "fioScripts\\sus_seqwr.txt",
+    "fioScripts\\sus_seqrd.txt",
 ]
 
 # <--------- testing-fio script --------->
@@ -44,7 +44,7 @@ data_a = parseControlerData() # single list data
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
 
-## ............................. <<< FIO SCRIPT EXECUTION >>>............................. #
+# # ............................. <<< FIO SCRIPT EXECUTION >>>............................. #
 
 # # <------------------> BPC1 ------------------>
 # bpc1(server, user, passd, dirx, bpc_1)
@@ -92,7 +92,11 @@ data_c = infoScriptEntry(fio) # list of list data
 status("<--------- Script Entry Data Completed! --------->", 1)
 
 # ............................. <<< MERGING DATA[A-C] >>> ............................. #
-final = [data_a, data_b, data_c]
+# data_a = [Firmware, capacity]
+# data_b = 
+# data_c =
+print("a : {0}, b : {1}, c : {2}".format(len(data_a), len(data_b), len(data_c)))
+final = [data_a,"xxxxx", data_b,"xxxxx", data_c]
 print(final)
 
 

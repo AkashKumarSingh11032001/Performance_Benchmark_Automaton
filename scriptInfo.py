@@ -2,6 +2,18 @@ import xlsxwriter
 import re
 from supportFunction_performance import removeExtraSpace
 from supportFunction_performance import stringToList
+from supportFunction import pickNum
+
+fio = [
+    "fioScripts\\burst_seqwr.txt",
+    "fioScripts\\burst_seqrd.txt",
+    "fioScripts\\burst_randwr.txt",
+    "fioScripts\\burst_randrd.txt",
+    "fioScripts\\burst_randwr_oio.txt",
+    "fioScripts\\burst_randrd_oio.txt",
+    "fioScripts\\sus_seqwr.txt",
+    "fioScripts\\sus_seqrd.txt",
+]
 
 def element(pattern,mylines):
     res = []
@@ -36,18 +48,24 @@ def infoScriptEntry(fio):
                 mylines.append(x)
 
         res = element(pattern,mylines)
-        size = res[0][-4:-1]
-        block = res[1][-6:-1]
+        size = pickNum(res[0][:-1])
+        block = pickNum(res[1][-6:-1])+"KB"
         iodepth = res[2][-2:-1]
         threads = res[3][-2:-1] 
 
         info = [size,block,iodepth,threads]
         proData_3.append(info)
+        
+    for i in range(len(proData_3)):
+        if (i == len(proData_3)-1) or (i == len(proData_3)-2):
+            proData_3[i][0] = proData_3[i][0] + "%"
+        else:
+            proData_3[i][0] = proData_3[i][0] + "GB"
     
     return proData_3
 
 
-# x = infoScript()
+# x = infoScriptEntry(fio)
 # print(x)
         
 # print([ele for ele in mylines if "bs=" in ele])
