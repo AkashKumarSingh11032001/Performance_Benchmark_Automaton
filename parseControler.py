@@ -1,4 +1,3 @@
-import xlsxwriter
 from supportFunction_performance import removeExtraSpace
 from supportFunction_performance import stringToList
 
@@ -28,12 +27,3 @@ def parseControlerData():
 # print(data_2)
 
 
-# workbook = xlsxwriter.Workbook('write_data.xlsx')
-# worksheet = workbook.add_worksheet()
-
-# worksheet.write(0, 0, "Standard Device Config.")
-# worksheet.write(1, 0, "Firware Rev.")  
-# worksheet.write(2, 0, "Drive Capacity")
-# worksheet.write(1, 1, firmware)
-# worksheet.write(2, 1, capacity)
-# workbook.close()
