@@ -66,5 +66,44 @@ worksheet.write("N5", "99.99th")
 worksheet.write("O5", "99.999th")
 worksheet.write("P5", "99.9999th")
 
+# cell = ["B6","C6","D6","E6","F6","G6","H6","I6","J6","K6","L6","M6","N6","O6","P6"]
+fileIndex = 0
+# BURST SEQUENTIAL WRITE
+worksheet.write("B6", data[2][fileIndex][0])
+worksheet.write("C6", data[2][fileIndex][1])
+worksheet.write("D6", data[2][fileIndex][2])
+worksheet.write("E6", data[2][fileIndex][3])
+worksheet.write("F6", "BPC1")
+worksheet.write("G6", data[1][fileIndex][0])
+worksheet.write("H6", data[1][fileIndex][1])
+worksheet.write("I6", data[1][fileIndex][2])
+worksheet.write("J6", data[1][fileIndex][3])
+worksheet.write("K6", data[1][fileIndex][4])
+worksheet.write("L6", data[1][fileIndex][5])
+worksheet.write("M6", data[1][fileIndex][6])
+worksheet.write("N6", data[1][fileIndex][7])
+worksheet.write("O6", data[1][fileIndex][8])
+worksheet.write("P6", data[1][fileIndex][9])
+
+fileIndex = fileIndex + 1
+# BURST SEQUENTIAL READ
+worksheet.write("B7", data[2][fileIndex][0])
+worksheet.write("C7", data[2][fileIndex][1])
+worksheet.write("D7", data[2][fileIndex][2])
+worksheet.write("E7", data[2][fileIndex][3])
+worksheet.write("F7", "BPC1")
+worksheet.write("G7", data[1][fileIndex][0])
+worksheet.write("H7", data[1][fileIndex][1])
+worksheet.write("I7", data[1][fileIndex][2])
+worksheet.write("J7", data[1][fileIndex][3])
+worksheet.write("K7", data[1][fileIndex][4])
+worksheet.write("L7", data[1][fileIndex][5])
+worksheet.write("M7", data[1][fileIndex][6])
+worksheet.write("N7", data[1][fileIndex][7])
+worksheet.write("O7", data[1][fileIndex][8])
+worksheet.write("P7", data[1][fileIndex][9])
+
+
+
 
 workbook.close()
