@@ -143,24 +143,6 @@ worksheet.write("P9", data[1][fileIndex][9])
 
 fileIndex = fileIndex + 1
 # BURST RANDOM WRITE
-worksheet.write("B9", data[2][fileIndex][0])
-worksheet.write("C9", data[2][fileIndex][1])
-worksheet.write("D9", data[2][fileIndex][2])
-worksheet.write("E9", data[2][fileIndex][3])
-worksheet.write("F9", "BPC1")
-worksheet.write("G9", data[1][fileIndex][0])
-worksheet.write("H9", data[1][fileIndex][1])
-worksheet.write("I9", data[1][fileIndex][2])
-worksheet.write("J9", data[1][fileIndex][3])
-worksheet.write("K9", data[1][fileIndex][4])
-worksheet.write("L9", data[1][fileIndex][5])
-worksheet.write("M9", data[1][fileIndex][6])
-worksheet.write("N9", data[1][fileIndex][7])
-worksheet.write("O9", data[1][fileIndex][8])
-worksheet.write("P9", data[1][fileIndex][9])
-
-fileIndex = fileIndex + 1
-# BURST RANDOM READ
 worksheet.write("B10", data[2][fileIndex][0])
 worksheet.write("C10", data[2][fileIndex][1])
 worksheet.write("D10", data[2][fileIndex][2])
@@ -176,6 +158,60 @@ worksheet.write("M10", data[1][fileIndex][6])
 worksheet.write("N10", data[1][fileIndex][7])
 worksheet.write("O10", data[1][fileIndex][8])
 worksheet.write("P10", data[1][fileIndex][9])
+
+fileIndex = fileIndex + 1
+# BURST RANDOM READ
+worksheet.write("B11", data[2][fileIndex][0])
+worksheet.write("C11", data[2][fileIndex][1])
+worksheet.write("D11", data[2][fileIndex][2])
+worksheet.write("E11", data[2][fileIndex][3])
+worksheet.write("F11", "BPC1")
+worksheet.write("G11", data[1][fileIndex][0])
+worksheet.write("H11", data[1][fileIndex][1])
+worksheet.write("I11", data[1][fileIndex][2])
+worksheet.write("J11", data[1][fileIndex][3])
+worksheet.write("K11", data[1][fileIndex][4])
+worksheet.write("L11", data[1][fileIndex][5])
+worksheet.write("M11", data[1][fileIndex][6])
+worksheet.write("N11", data[1][fileIndex][7])
+worksheet.write("O11", data[1][fileIndex][8])
+worksheet.write("P11", data[1][fileIndex][9])
+
+fileIndex = fileIndex + 1
+# BURST RANDOM WRITE OIO
+worksheet.write("B12", data[2][fileIndex][0])
+worksheet.write("C12", data[2][fileIndex][1])
+worksheet.write("D12", data[2][fileIndex][2])
+worksheet.write("E12", data[2][fileIndex][3])
+worksheet.write("F12", "BPC1")
+worksheet.write("G12", data[1][fileIndex][0])
+worksheet.write("H12", data[1][fileIndex][1])
+worksheet.write("I12", data[1][fileIndex][2])
+worksheet.write("J12", data[1][fileIndex][3])
+worksheet.write("K12", data[1][fileIndex][4])
+worksheet.write("L12", data[1][fileIndex][5])
+worksheet.write("M12", data[1][fileIndex][6])
+worksheet.write("N12", data[1][fileIndex][7])
+worksheet.write("O12", data[1][fileIndex][8])
+worksheet.write("P12", data[1][fileIndex][9])
+
+fileIndex = fileIndex + 1
+# BURST RANDOM READ OIO
+worksheet.write("B13", data[2][fileIndex][0])
+worksheet.write("C13", data[2][fileIndex][1])
+worksheet.write("D13", data[2][fileIndex][2])
+worksheet.write("E13", data[2][fileIndex][3])
+worksheet.write("F13", "BPC1")
+worksheet.write("G13", data[1][fileIndex][0])
+worksheet.write("H13", data[1][fileIndex][1])
+worksheet.write("I13", data[1][fileIndex][2])
+worksheet.write("J13", data[1][fileIndex][3])
+worksheet.write("K13", data[1][fileIndex][4])
+worksheet.write("L13", data[1][fileIndex][5])
+worksheet.write("M13", data[1][fileIndex][6])
+worksheet.write("N13", data[1][fileIndex][7])
+worksheet.write("O13", data[1][fileIndex][8])
+worksheet.write("P13", data[1][fileIndex][9])
 
 
 workbook.close()
