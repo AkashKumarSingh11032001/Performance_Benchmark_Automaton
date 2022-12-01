@@ -1,5 +1,9 @@
 import xlsxwriter
 
+# data_a = [Firmware, capacity]
+# data_b = [Iops, Bandwidth, AVg. latecy, 50th-99.9999th ]
+# data_c = [Size, Block size, IO-DEPTH, Thread]
+
 data = [
     ['3d61125', '1.02 TB'], 
     [
