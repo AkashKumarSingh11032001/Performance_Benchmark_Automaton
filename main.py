@@ -111,8 +111,9 @@ status("<--------- Script Entry Data Completed! --------->", 1)
 
 # ............................. <<< MERGING DATA[A-C] >>> ............................. #
 # data_a = [Firmware, capacity]
-# data_b = [Iops, Bandwidth, AVg latecy, 50th-99.9999th ]
-# data_c = []
+# data_b = [Iops, Bandwidth, AVg. latecy, 50th-99.9999th ]
+# data_c = [Size, Block size, IO-DEPTH, Thread]
+
 print("a : {0}, b : {1}, c : {2}".format(
     len(data_a), len(data_b), len(data_c)))
 final = [data_a, data_b, data_c]
