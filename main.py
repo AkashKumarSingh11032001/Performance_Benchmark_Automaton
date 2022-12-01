@@ -20,12 +20,12 @@ bpc_1 = "preCondition\\bpc1.txt"
 fio = [
     "fioScripts\\burst_seqwr.txt",
     "fioScripts\\burst_seqrd.txt",
+    "fioScripts\\sus_seqwr.txt",
+    "fioScripts\\sus_seqrd.txt",
     "fioScripts\\burst_randwr.txt",
     "fioScripts\\burst_randrd.txt",
     "fioScripts\\burst_randwr_oio.txt",
     "fioScripts\\burst_randrd_oio.txt",
-    "fioScripts\\sus_seqwr.txt",
-    "fioScripts\\sus_seqrd.txt",
 ]
 
 # <--------- testing-fio script --------->
