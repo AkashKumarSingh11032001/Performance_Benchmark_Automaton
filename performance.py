@@ -85,15 +85,12 @@ def iterFile(mylines, fileLoc):
         percentile_res = np.reshape(percentile_res, (-1, 7))
 
         if "k" not in iops[0]:
-            print("if: {0}".format(iops[0]))
             iops[0] = str(int(iops[0]) / 1000)
         else:
-            print("else: {0}".format(iops[0]))
             iops[0] = iops[0].rstrip(iops[0][-1])
 
         iops_res.append(iops[0])
-        print(iops)
-        string = "".join(iops_res)
+        string = "".join(iops)
         start = string.find("(")
         end = string.find(")")
         iops_res.append(string[start + 1: end])
@@ -106,10 +103,10 @@ def iterFile(mylines, fileLoc):
 
         ls = np.reshape(ls, (-1, 3))
 
-    percentile_res = [item for i in percentile_res for item in i]
+    percentile_resx = [item for i in percentile_res for item in i]
     ls = [item for i in ls for item in i]
 
-    return percentile_res, ls
+    return percentile_resx, ls
 
 
 def performanceEntry():
@@ -128,7 +125,7 @@ def performanceEntry():
     points_ratio = []
     points_ls = []
     res = []
-    for j in range(8):
+    for j in range(len(files)):
         mylines = []
         with open(files[j]) as fp:
             for x in fp:

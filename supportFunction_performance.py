@@ -64,8 +64,6 @@ def removeUnwantercharater_IOPS(s):
 
 
 res = []
-
-
 def ratios_IOPS(reqIndex):
     s = listToString(reqIndex)
     s = removeUnwantercharater_IOPS(s)
@@ -77,7 +75,6 @@ def ratios_IOPS(reqIndex):
     for i in s:
         a = stringToList(i, "=")
         mainList = mainList + a
-    print()
 
     newList = []
     for i in mainList:
