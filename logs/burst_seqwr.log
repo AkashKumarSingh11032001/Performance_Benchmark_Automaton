@@ -1,0 +1,33 @@
+job1: (g=0): rw=write, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=8
+fio-3.16
+Starting 1 thread
+Jobs: 1 (f=1)Jobs: 1 (f=1)Jobs: 1 (f=1): [W(1)][30.0%][w=2946MiB/s][w=23.6k IOPS][eta 00m:07s]
+Jobs: 1 (f=1): [W(1)][40.0%][w=2946MiB/s][w=23.6k IOPS][eta 00m:06s]Jobs: 1 (f=1): [W(1)][50.0%][w=2941MiB/s][w=23.5k IOPS][eta 00m:05s] 
+Jobs: 1 (f=1): [W(1)][60.0%][w=2943MiB/s][w=23.5k IOPS][eta 00m:04s]Jobs: 1 (f=1): [W(1)][70.0%][w=2935MiB/s][w=23.5k IOPS][eta 00m:03s] 
+Jobs: 1 (f=1): [W(1)][80.0%][w=2924MiB/s][w=23.4k IOPS][eta 00m:02s]Jobs: 1 (f=1): [W(1)][90.0%][w=2847MiB/s][w=22.8k IOPS][eta 00m:01s] 
+Jobs: 1 (f=1): [W(1)][100.0%][w=2856MiB/s][w=22.8k IOPS][eta 00m:00s]
+job1: (groupid=0, jobs=1): err= 0: pid=5282: Thu Dec  1 19:50:46 2022
+  write: IOPS=23.3k, BW=2919MiB/s (3060MB/s)(28.5GiB/10001msec); 0 zone resets
+    slat (nsec): min=3672, max=60059, avg=6284.82, stdev=1545.17
+    clat (usec): min=108, max=6440, avg=336.04, stdev=298.24
+     lat (usec): min=138, max=6446, avg=342.38, stdev=298.22
+     lat percentiles (usec):
+     | 50.0000th=[  269], 75.0000th=[  310], 99.0000th=[ 1369],
+     | 99.9000th=[ 5276], 99.9900th=[ 5473], 99.9990th=[ 6390],
+     | 99.9999th=[ 6456]
+   bw (  MiB/s): min= 2820, max= 2961, per=99.98%, avg=2918.01, stdev=43.09, samples=20
+   iops        : min=22562, max=23688, avg=23344.00, stdev=344.74, samples=20
+  lat (usec)   : 250=6.88%, 500=85.64%, 750=3.72%, 1000=0.25%
+  lat (msec)   : 2=3.05%, 4=0.35%, 10=0.11%
+  cpu          : usr=12.43%, sys=6.13%, ctx=233032, majf=0, minf=1
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=100.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.1%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,233518,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=8
+
+Run status group 0 (all jobs):
+  WRITE: bw=2919MiB/s (3060MB/s), 2919MiB/s-2919MiB/s (3060MB/s-3060MB/s), io=28.5GiB (30.6GB), run=10001-10001msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
