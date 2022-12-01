@@ -116,10 +116,10 @@ def performanceEntry():
     files = [
         "logs\\burst_seqwr.log",
         "logs\\burst_seqrd.log",
-        "logs\\burst_randwr.log",
-        "logs\\burst_randrd.log",
         "logs\\sus_seqwr.log",
         "logs\\sus_seqrd.log",
+        "logs\\burst_randwr.log",
+        "logs\\burst_randrd.log",
         "logs\\burst_randwr_oio.log",
         "logs\\burst_randrd_oio.log",
     ]
