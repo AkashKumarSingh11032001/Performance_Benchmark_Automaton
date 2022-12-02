@@ -15,6 +15,7 @@ from parseControler import parseControlerData
 from performance import performanceEntry
 from scriptInfo import infoScriptEntry
 from formatDrive import driveFormat
+from dataOverview import excelPlot
 
 bpc_1 = "preCondition\\bpc1.txt"
 
@@ -117,7 +118,8 @@ status("<--------- Script Entry Data Completed! --------->", 1)
 print("a : {0}, b : {1}, c : {2}".format(
     len(data_a), len(data_b), len(data_c)))
 final = [data_a, data_b, data_c]
-print(final)
+# print(final)
+excelPlot(final)
 
 
 # create a list of cmd to perform in list and pass them one by one int Exection.
