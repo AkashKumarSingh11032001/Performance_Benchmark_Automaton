@@ -4,7 +4,7 @@ from pathlib import Path
 def ScriptFIO():
     # assign directory
     directory = f'fioScripts'
-    preConditionData = f'Scriptdata.txt'
+    preConditionData = f'FioScriptExtractor\\Scriptdata.txt'
     
     FIOFiles = []
     files = Path(directory).glob('*')
