@@ -46,7 +46,7 @@ if user == "yes" or user == "y":
     print("\nDefault File content of {0} \n".format(Path(fio[indx]).stem))
     res_dict = twoListToDictionary(key, value[indx])
     print("PARAMETER - DEFAULT VALUE\n")
-    for i in res_dict:
+    for i in range(len(res_dict)):
         print(i," - ", res_dict[i])
 else:
     pass
