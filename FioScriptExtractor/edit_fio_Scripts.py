@@ -1,33 +1,49 @@
 from csv import writer
 from pathlib import Path
+
  
 def ScriptFIO():
     # assign directory
     directory = f'fioScripts'
     preConditionData = f'FioScriptExtractor\\Scriptdata.txt'
     
-    FIOFiles = []
-    files = Path(directory).glob('*')
-    for file in files:
-        FIOFiles.append(file)
+    # FIOFiles = []
+    # files = Path(directory).glob('*')
+    # for file in files:
+    #     FIOFiles.append(file)
+    FIOFiles = [
+    "FioScriptExtractor\\fioS\\burst_seqwr.txt",
+    "FioScriptExtractor\\fioS\\burst_seqrd.txt",
+    "FioScriptExtractor\\fioS\\sus_seqwr.txt",
+    "FioScriptExtractor\\fioS\\sus_seqrd.txt",
+    "FioScriptExtractor\\fioS\\burst_randwr.txt",
+    "FioScriptExtractor\\fioS\\burst_randrd.txt",
+    "FioScriptExtractor\\fioS\\burst_randwr_oio.txt",
+    "FioScriptExtractor\\fioS\\burst_randrd_oio.txt",
+    ]
 
     # print(FIOFiles) 
 
     # # Heading
     mylines = []
     # print(FIOFiles)
+    file = "FioScriptExtractor\\fioS\\sus_seqwr.txt"
     with open(file) as fp:
         for x in fp:
             mylines.append(x)   
 
-    heading = []
+    heading = ""
     for i in range(2, len(mylines)):
         x = mylines[i].split('=')
         if(len(x) == 2):
-            heading.append(x[0])
+            # heading.append(x[0])
+            if heading == "":
+                heading = x[0]
+            else:
+                heading = heading + "," +x[0]
 
     with open(preConditionData, 'w') as f_object:
-        f_object.write(str(heading)+ "\n")  
+        f_object.write(heading+ "\n")  
 
 
     # print("Heading Data => {0}".format(heading))    
@@ -40,16 +56,21 @@ def ScriptFIO():
             for x in fp:
                 mylines.append(x)
 
-        value = []
+        value = ""
         for i in range(2, len(mylines)):
             x = mylines[i].split('=')
             if(len(x) == 2):
-                value.append(x[1][:len(x[1])-1])    
+                v = x[1][:len(x[1])-1]
+                # value.append(x[1][:len(x[1])-1])    
+                if value == "":
+                    value = v
+                else:
+                    value = value + "," + v
 
         # print("Values Data => {0}".format(value))
 
         with open(preConditionData, 'a') as f_object:
-            f_object.write(str(value)+ "\n")
+            f_object.write(value+ "\n")
             
 def BPC():
     # assign directory
