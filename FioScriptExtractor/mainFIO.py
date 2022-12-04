@@ -74,6 +74,7 @@ if user == "yes" or user == "y":
             res_dict[i] = inp_par
 
     print("\nUpdated FIO Script : \n")
+    print("PARAMETER - UPDATED VALUE\n")
     for i in res_dict:
         print(i, " - ", res_dict[i])
 else:
