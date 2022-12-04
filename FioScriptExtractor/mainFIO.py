@@ -9,7 +9,12 @@ def twoListToDictionary(test_keys, test_values):
     return res
 
 
-fio = [
+def mergeDict(dict1, dict2):
+    res = {**dict1, **dict2}
+    return res
+
+
+fio_default = [
     "FioScriptExtractor\\fio_default\\burst_seqwr.txt",
     "FioScriptExtractor\\fio_default\\burst_seqrd.txt",
     "FioScriptExtractor\\fio_default\\sus_seqwr.txt",
@@ -18,6 +23,17 @@ fio = [
     "FioScriptExtractor\\fio_default\\burst_randrd.txt",
     "FioScriptExtractor\\fio_default\\burst_randwr_oio.txt",
     "FioScriptExtractor\\fio_default\\burst_randrd_oio.txt",
+]
+
+fio_updated = [
+    "FioScriptExtractor\\fio_updated\\burst_seqwr.txt",
+    "FioScriptExtractor\\fio_updated\\burst_seqrd.txt",
+    "FioScriptExtractor\\fio_updated\\sus_seqwr.txt",
+    "FioScriptExtractor\\fio_updated\\sus_seqrd.txt",
+    "FioScriptExtractor\\fio_updated\\burst_randwr.txt",
+    "FioScriptExtractor\\fio_updated\\burst_randrd.txt",
+    "FioScriptExtractor\\fio_updated\\burst_randwr_oio.txt",
+    "FioScriptExtractor\\fio_updated\\burst_randrd_oio.txt",
 ]
 
 
@@ -41,31 +57,32 @@ value = test[1:]
 
 keep = True
 while keep:
-    user = input("\nDo you want to edit any FIO scripts? ")
+    user = input("\nDo you want to edit any fio_updated scripts? ")
     if user == "yes" or user == "y":
-        print("")   
+        print("")
 
-        for i in range(len(fio)):
-            # list fio name to be edit
-            print("{} - {}".format(i, Path(fio[i]).stem))   
+        for i in range(len(fio_updated)):
+            # list fio_updated name to be edit
+            print("{} - {}".format(i, Path(fio_updated[i]).stem))
 
         indx = int(input("\nSelect File you want to edit. "))
-        print("\nDefault File content of {0} \n".format(Path(fio[indx]).stem))  
+        print("\nDefault File content of {0} \n".format(
+            Path(fio_updated[indx]).stem))
 
         res_dict = twoListToDictionary(key, value[indx])
         # print(res_dict)
         print("PARAMETER - DEFAULT VALUE\n")
         for i in res_dict:
-            print(i, " - ", res_dict[i])    
+            print(i, " - ", res_dict[i])
 
         edit_para = input(
             "Please enter the PARAMETER (seprated by space, if multiple parameters to be edited). ")
         if len(edit_para) == 1:
             par = edit_para
         else:
-            par = edit_para.split(" ")  
+            par = edit_para.split(" ")
 
-        print("\nSelected PARAMETER to be edited are {0}\n".format(par))    
+        print("\nSelected PARAMETER to be edited are {0}\n".format(par))
 
         for i in par:
             if i not in res_dict:
@@ -73,12 +90,21 @@ while keep:
                 exit()
             else:
                 inp_par = input("Please enter new {0} value = ".format(i))
-                res_dict[i] = inp_par   
+                res_dict[i] = inp_par
 
-        print("\nUpdated FIO Script : \n")
+        print("\nUpdated fio_updated Script : \n")
         print("PARAMETER - UPDATED VALUE\n")
         for i in res_dict:
             print(i, " - ", res_dict[i])
-        
+
+        d1 = {"[global]": "", "thread": ""}
+        d2 = mergeDict(d1, res_dict)
+        last_d = d2.popitem()
+        d3 = {last_d[0]: last_d[1]}
+        d4 = {"": "", "[job1]": ""}
+        d5 = mergeDict(d2, d4)
+        final_dict = mergeDict(d5, d3)
+        print(final_dict)
+
     else:
         keep = False

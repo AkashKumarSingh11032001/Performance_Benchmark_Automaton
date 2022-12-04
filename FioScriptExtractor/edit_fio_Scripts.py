@@ -12,14 +12,14 @@ def ScriptFIO():
     # for file in files:
     #     FIOFiles.append(file)
     FIOFiles = [
-    "FioScriptExtractor\\fioS\\burst_seqwr.txt",
-    "FioScriptExtractor\\fioS\\burst_seqrd.txt",
-    "FioScriptExtractor\\fioS\\sus_seqwr.txt",
-    "FioScriptExtractor\\fioS\\sus_seqrd.txt",
-    "FioScriptExtractor\\fioS\\burst_randwr.txt",
-    "FioScriptExtractor\\fioS\\burst_randrd.txt",
-    "FioScriptExtractor\\fioS\\burst_randwr_oio.txt",
-    "FioScriptExtractor\\fioS\\burst_randrd_oio.txt",
+    "FioScriptExtractor\\fio_default\\burst_seqwr.txt",
+    "FioScriptExtractor\\fio_default\\burst_seqrd.txt",
+    "FioScriptExtractor\\fio_default\\sus_seqwr.txt",
+    "FioScriptExtractor\\fio_default\\sus_seqrd.txt",
+    "FioScriptExtractor\\fio_default\\burst_randwr.txt",
+    "FioScriptExtractor\\fio_default\\burst_randrd.txt",
+    "FioScriptExtractor\\fio_default\\burst_randwr_oio.txt",
+    "FioScriptExtractor\\fio_default\\burst_randrd_oio.txt",
     ]
 
     # print(FIOFiles) 
@@ -27,7 +27,7 @@ def ScriptFIO():
     # # Heading
     mylines = []
     # print(FIOFiles)
-    file = "FioScriptExtractor\\fioS\\sus_seqwr.txt"
+    file = "FioScriptExtractor\\fio_default\\sus_seqwr.txt"
     with open(file) as fp:
         for x in fp:
             mylines.append(x)   
