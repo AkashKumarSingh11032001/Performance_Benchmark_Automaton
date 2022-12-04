@@ -30,6 +30,17 @@ fio = [
     "fioScripts\\burst_randrd_oio.txt",
 ]
 
+fio_updated = [
+    "fio_updated\\burst_seqwr.txt",
+    "fio_updated\\burst_seqrd.txt",
+    "fio_updated\\sus_seqwr.txt",
+    "fio_updated\\sus_seqrd.txt",
+    "fio_updated\\burst_randwr.txt",
+    "fio_updated\\burst_randrd.txt",
+    "fio_updated\\burst_randwr_oio.txt",
+    "fio_updated\\burst_randrd_oio.txt",
+]
+
 # <--------- testing-fio script --------->
 x = ["C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\preCondition\\x.sh"]
 y = ["Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"]
