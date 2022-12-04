@@ -13,6 +13,11 @@ def mergeDict(dict1, dict2):
     res = {**dict1, **dict2}
     return res
 
+def dictToFIOFile(dictonary,file):
+    pass
+    
+    
+
 
 fio_default = [
     "FioScriptExtractor\\fio_default\\burst_seqwr.txt",
@@ -49,15 +54,14 @@ for s in ScriptData:
     l = s.split(",")
     test.append(l)
 
-test[0][len(test[0])-1] = test[0][len(test[0]) -
-                                  1][:-1]  # removing \n from first line
+test[0][len(test[0])-1] = test[0][len(test[0]) - 1][:-1]  # removing \n from first line
 # print(test[0])
 key = test[0]
 value = test[1:]
 
 keep = True
 while keep:
-    user = input("\nDo you want to edit any fio_updated scripts? ")
+    user = input("\nDo you want to edit any fio scripts? ")
     if user == "yes" or user == "y":
         print("")
 
@@ -105,6 +109,7 @@ while keep:
         d5 = mergeDict(d2, d4)
         final_dict = mergeDict(d5, d3)
         print(final_dict)
+        dictToFIOFile(final_dict,fio_updated[indx])
 
     else:
         keep = False
