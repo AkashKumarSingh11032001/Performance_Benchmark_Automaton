@@ -13,20 +13,19 @@ def mergeDict(dict1, dict2):
     res = {**dict1, **dict2}
     return res
 
-def dictToFIOFile(dictionary,file = 'FioScriptExtractor\\geekyfile.txt'):
+
+def dictToFIOFile(dictionary, file='FioScriptExtractor\\geekyfile.txt'):
     geeky_file = open(file, 'wt')
     for i in dictionary:
-        
+
         if i == "" or i == "[job1]" or i == "[global]" or i == "thread":
             x = i + dictionary[i] + "\n"
         else:
             x = i+"="+dictionary[i]+"\n"
-            
+
         geeky_file.write(x)
 
     geeky_file.close()
-    
-    
 
 
 fio_default = [
@@ -64,7 +63,8 @@ for s in ScriptData:
     l = s.split(",")
     test.append(l)
 
-test[0][len(test[0])-1] = test[0][len(test[0]) - 1][:-1]  # removing \n from first line
+test[0][len(test[0])-1] = test[0][len(test[0]) -
+                                  1][:-1]  # removing \n from first line
 # print(test[0])
 key = test[0]
 value = test[1:]
@@ -119,7 +119,7 @@ while keep:
         d5 = mergeDict(d2, d4)
         final_dict = mergeDict(d5, d3)
         print(final_dict)
-        dictToFIOFile(final_dict,fio_updated[indx])
+        dictToFIOFile(final_dict, fio_updated[indx])
 
     else:
         keep = False
