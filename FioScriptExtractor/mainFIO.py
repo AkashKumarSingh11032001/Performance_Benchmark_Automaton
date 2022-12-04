@@ -13,8 +13,18 @@ def mergeDict(dict1, dict2):
     res = {**dict1, **dict2}
     return res
 
-def dictToFIOFile(dictonary,file):
-    pass
+def dictToFIOFile(dictionary,file = 'FioScriptExtractor\\geekyfile.txt'):
+    geeky_file = open(file, 'wt')
+    for i in dictionary:
+        
+        if i == "" or i == "[job1]" or i == "[global]" or i == "thread":
+            x = i + dictionary[i] + "\n"
+        else:
+            x = i+"="+dictionary[i]+"\n"
+            
+        geeky_file.write(x)
+
+    geeky_file.close()
     
     
 
