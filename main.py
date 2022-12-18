@@ -40,7 +40,6 @@ passd = "12"
 dirx = "/root/fio/"
 
 
-
 def FIOexecution(server, user, passd, dirx, fio):
     # <------------------> BPC1 ------------------>
     bpc_1 = "preCondition\\bpc1.txt"
@@ -87,7 +86,6 @@ def FIOexecution(server, user, passd, dirx, fio):
     driveFormat(server, user, passd, dirx)
     status("FORMAT DONE!", 0.5)
 
-
     # <--------- BURST RANDOM WRITE OIO --------->
     burst_randwr_oio(server, user, passd, dirx, fio[6])
     status("<--------- BURST RANDOM WRITE OIO is been implemented! --------->", 1)
@@ -95,13 +93,14 @@ def FIOexecution(server, user, passd, dirx, fio):
     # <--------- BURST RANDOM READ OIO --------->
     burst_randrd_oio(server, user, passd, dirx, fio[7])
     status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
-    
+
+
 # ............................. <<< Controler Identify >>>  ............................. #
 identifyCtrl(server, user, passd, dirx)
 data_a = parseControlerData()  # single list data
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
-# ............................. <<< FIO SCRIPT EXECUTION >>>............................. #
+# ............................. <<< FIO SCRIPT EXECUTION >>>.............................
 FIOexecution(server, user, passd, dirx, fio)
 
 # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
@@ -122,7 +121,6 @@ final = [data_a, data_b, data_c]
 # print(final)
 excelPlot(final)
 status("<--------- Excel Ready! --------->", 1)
-
 
 
 # create a list of cmd to perform in list and pass them one by one int Exection.

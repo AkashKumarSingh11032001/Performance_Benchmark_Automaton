@@ -53,8 +53,8 @@ def excelPlot(data):
     # Standard FIO Scripts
     worksheet.write("A6", "BURST SEQUENTIAL WRITE", heading)
     worksheet.write("A7", "BURST SEQUENTIAL READ", heading)
-    worksheet.write("A8", "SUBSTAIN SEQUENTIAL WRITE", heading)
-    worksheet.write("A9", "SUBSTAIN SEQUENTIAL READ", heading)
+    worksheet.write("A8", "SUSTAIN SEQUENTIAL WRITE", heading)
+    worksheet.write("A9", "SUSTAIN SEQUENTIAL READ", heading)
     worksheet.write("A10", "BURST RANDOM WRITE", heading)
     worksheet.write("A11", "BURST RANDOM READ", heading)
     worksheet.write("A12", "BURST RANDOM WRITE OIO", heading)

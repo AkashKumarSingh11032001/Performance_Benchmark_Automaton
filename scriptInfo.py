@@ -46,15 +46,24 @@ def infoScriptEntry(fio):
         with open(file[i]) as fp:
             for x in fp:
                 mylines.append(x)
+        if file[i] in ["fioScripts\\burst_randwr.txt","fioScripts\\burst_randrd.txt"]:
+            res = element(pattern,mylines)
+            size = pickNum(res[0][:-1])
+            block = pickNum(res[1][-6:-1])+"KB"
+            iodepth = res[2][-3:-1]
+            threads = res[3][-3:-1] 
 
-        res = element(pattern,mylines)
-        size = pickNum(res[0][:-1])
-        block = pickNum(res[1][-6:-1])+"KB"
-        iodepth = res[2][-2:-1]
-        threads = res[3][-2:-1] 
+            info = [size,block,iodepth,threads]
+            proData_3.append(info)
+        else:
+            res = element(pattern,mylines)
+            size = pickNum(res[0][:-1])
+            block = pickNum(res[1][-6:-1])+"KB"
+            iodepth = res[2][-2:-1]
+            threads = res[3][-2:-1] 
 
-        info = [size,block,iodepth,threads]
-        proData_3.append(info)
+            info = [size,block,iodepth,threads]
+            proData_3.append(info)
         
     for i in range(len(proData_3)):
         if (i == 2) or (i == 3):
