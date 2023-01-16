@@ -1,4 +1,7 @@
 import xlsxwriter
+from os.path import dirname
+
+localPath= dirname(__file__)
 
 # data_a = [Firmware, capacity]
 # data_b = [Iops, Bandwidth, AVg. latecy, 50th-99.9999th ]
@@ -34,7 +37,7 @@ data_X = [
 def excelPlot(data,opr):
 
     excelName = data[0][0] + "_" + data[0][1] + "_" + opr + ".xlsx" #"FC3.1_BPC1_1.xlsx"
-    workbook = xlsxwriter.Workbook("Performance_Benchmark_Automaton\\results\\{0}".format(excelName))
+    workbook = xlsxwriter.Workbook("{0}\\results\\{1}".format(localPath,excelName))
     worksheet = workbook.add_worksheet()
     
     Cellformat_1 = workbook.add_format({'border': 2,'italic': True,'center_across': True})

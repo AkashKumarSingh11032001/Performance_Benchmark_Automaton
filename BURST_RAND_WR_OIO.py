@@ -1,9 +1,12 @@
 from conectionBetweenTwoHost import HostsConnectionandCommandExecution
 from conectionBetweenTwoHost import HostsFileTransfer
-
+from os.path import dirname
 
 def burst_randwr_oio(server, user, passd, dirx, doc):
+    
+    localPath= dirname(__file__)
     locFile = doc
+    
     HostsFileTransfer(
         server=server,
         username=user,
@@ -31,7 +34,7 @@ def burst_randwr_oio(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="Performance_Benchmark_Automaton\\logs\\burst_randwr_oio.log",
+        localFileNameWithLocation="{0}\\logs\\burst_randwr_oio.log".format(localPath),
         remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )

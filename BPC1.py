@@ -3,7 +3,10 @@ from conectionBetweenTwoHost import HostsFileTransfer
 
 
 def bpc1(server, user, passd, dirx, doc):
+    
+    localPath= dirname(__file__)
     locFile = doc
+    
     HostsFileTransfer(
         server=server,
         username=user,
@@ -31,7 +34,7 @@ def bpc1(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="logs\\bpc1.log",
+        localFileNameWithLocation="{0}\\logs\\bpc1.log".format(localPath),
         remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )

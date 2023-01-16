@@ -3,17 +3,20 @@ import re
 from supportFunction_performance import removeExtraSpace
 from supportFunction_performance import stringToList
 from supportFunction import pickNum
+from os.path import dirname
+
+localPath= dirname(__file__)
 
 fio = [
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
-]
+    "{0}\\fioScripts\\burst_seqwr.txt".format(localPath),
+    "{0}\\fioScripts\\burst_seqrd.txt".format(localPath),
+    "{0}\\fioScripts\\sus_seqwr.txt".format(localPath),
+    "{0}\\fioScripts\\sus_seqrd.txt".format(localPath),
+    "{0}\\fioScripts\\burst_randwr.txt".format(localPath),
+    "{0}\\fioScripts\\burst_randrd.txt".format(localPath),
+    "{0}\\fioScripts\\burst_randwr_oio.txt".format(localPath),
+    "{0}\\fioScripts\\burst_randrd_oio.txt".format(localPath),
+    ]
 
 def element(pattern,mylines):
     res = []
@@ -46,7 +49,7 @@ def infoScriptEntry(fio):
         with open(file[i]) as fp:
             for x in fp:
                 mylines.append(x)
-        if file[i] in ["Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt","Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt"]:
+        if file[i] in ["{0}\\fioScripts\\burst_randwr.txt".format(localPath),"{0}\\fioScripts\\burst_randrd.txt".format(localPath)]:
             res = element(pattern,mylines)
             size = pickNum(res[0][:-1])
             block = pickNum(res[1][-6:-1])+"KB"

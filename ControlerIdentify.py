@@ -1,8 +1,13 @@
 from conectionBetweenTwoHost import HostsConnectionandCommandExecution
 from conectionBetweenTwoHost import HostsFileTransfer
+from os.path import dirname
+
+ 
 
 def identifyCtrl(server, user, passd, dirx):
-    loc = "Performance_Benchmark_Automaton\\logs\\ctrl_res.txt"
+    localPath= dirname(__file__)
+    
+    loc = "{0}\\logs\\ctrl_res.txt".format(localPath)
     HostsConnectionandCommandExecution(
         server=server,
         username=user,

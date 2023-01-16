@@ -1,9 +1,12 @@
 from conectionBetweenTwoHost import HostsConnectionandCommandExecution
 from conectionBetweenTwoHost import HostsFileTransfer
-
+from os.path import dirname
 
 def sus_seqrd(server, user, passd, dirx, doc):
+    
+    localPath= dirname(__file__)
     locFile = doc
+    
     HostsFileTransfer(
         server=server,
         username=user,
@@ -31,7 +34,7 @@ def sus_seqrd(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="Performance_Benchmark_Automaton\\logs\\sus_seqrd.log",
+        localFileNameWithLocation="{0}\\logs\\sus_seqrd.log".format(localPath),
         remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )

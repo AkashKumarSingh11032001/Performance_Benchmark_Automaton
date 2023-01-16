@@ -18,29 +18,29 @@ from formatDrive import driveFormat
 from dataOverview import excelPlot
 
 
-fio = [
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
-    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
-]
+# fio = [
+#     "Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
+#     "Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
+#     "Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
+#     "Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
+#     "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
+#     "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
+#     "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
+#     "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
+# ]
 
-# <--------- testing-fio script --------->
-x = ["C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\preCondition\\x.sh"]
-y = ["Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"]
+# # <--------- testing-fio script --------->
+# x = ["C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\preCondition\\x.sh"]
+# y = ["Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"]
 
-server = "10.207.48.244"#"10.207.48.142"#"10.207.50.183" #"10.207.48.244"  # "10.207.48.182"
-user = "root"
-passd = "12"
+# server = "10.207.48.244"#"10.207.48.142"#"10.207.50.183" #"10.207.48.244"  # "10.207.48.182"
+# user = "root"
+# passd = "12"
 
-dirx = "/root/fio/"
+# dirx = "/root/fio/"
 
 
-def FIOexecution(server, user, passd, dirx, fio):
+def FIOexecutionBPC0(server, user, passd, dirx, fio):
     
     # <<< DRIVE FORMAT >>>
     driveFormat(server, user, passd, dirx)
@@ -54,10 +54,6 @@ def FIOexecution(server, user, passd, dirx, fio):
     burst_seqrd(server, user, passd, dirx, fio[1])
     status("<--------- BURST SEQUENTIAL READ is been implemented! --------->", 1)
 
-    # # <<< DRIVE FORMAT >>>
-    # driveFormat(server, user, passd, dirx)
-    # status("FORMAT DONE!", 0.5)
-
     # <--------- SUSTAINED SEQUENTIAL WRITE --------->
     sus_seqwr(server, user, passd, dirx, fio[2])
     status("<--------- SUSTAINED SEQUENTIAL WRITE is been implemented! --------->", 1)
@@ -65,10 +61,6 @@ def FIOexecution(server, user, passd, dirx, fio):
     # <--------- SUSTAINED SEQUENTIAL READ --------->
     sus_seqrd(server, user, passd, dirx, fio[3])
     status("<--------- SUSTAINED SEQUENTIAL READ is been implemented! --------->", 1)
-
-    # # <<< DRIVE FORMAT >>>
-    # driveFormat(server, user, passd, dirx)
-    # status("FORMAT DONE!", 0.5)
 
     # <--------- BURST RANDOM WRITE --------->
     burst_randwr(server, user, passd, dirx, fio[4])
@@ -78,10 +70,6 @@ def FIOexecution(server, user, passd, dirx, fio):
     burst_randrd(server, user, passd, dirx, fio[5])
     status("<--------- BURST RANDOM READ is been implemented! --------->", 1)
 
-    # # <<< DRIVE FORMAT >>>
-    # driveFormat(server, user, passd, dirx)
-    # status("FORMAT DONE!", 0.5)
-
     # <--------- BURST RANDOM WRITE OIO --------->
     burst_randwr_oio(server, user, passd, dirx, fio[6])
     status("<--------- BURST RANDOM WRITE OIO is been implemented! --------->", 1)
@@ -90,80 +78,49 @@ def FIOexecution(server, user, passd, dirx, fio):
     burst_randrd_oio(server, user, passd, dirx, fio[7])
     status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
 
+def ExeBPC0(Userserver):
 
-# ............................. <<< Controler Identify >>>  ............................. #
-identifyCtrl(server, user, passd, dirx)
-data_a = parseControlerData()  # single list data
-status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
+    server = Userserver
+    user = "root"
+    passd = "12"
 
-# ............................. <<< FIO SCRIPT EXECUTION >>>.............................
-# FIOexecution(server, user, passd, dirx, fio)
+    dirx = "/root/fio/"
+    # C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\fioScripts\burst_randrd_oio.txt
+    fio = [
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
+    ]
 
-# ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
-data_b = performanceEntry()  # list of list data
-status("<--------- Performance Entry Data Collection Completed! --------->", 1)
+    # <--------- testing-fio script --------->
+    x = ["C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\preCondition\\x.sh"]
+    y = ["Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"]
+    
+    # ............................. <<< Controler Identify >>>  ............................. #
+    identifyCtrl(server, user, passd, dirx)
+    data_a = parseControlerData()  # single list data
+    status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
-# ............................. <<< SCRIPT ENTRY DATA COLLECTION >>> ............................. #
-data_c = infoScriptEntry(fio)  # list of list data
-status("<--------- Script Entry Data Completed! --------->", 1)
+    # ............................. <<< FIO SCRIPT EXECUTION >>>.............................
+    # FIOexecutionBPC0(server, user, passd, dirx, fio)
 
-# ............................. <<< MERGING DATA[A-C] >>> ............................. #
-# data_a = [Firmware, capacity]
-# data_b = [Iops, Bandwidth, AVg. latecy, 50th-99.9999th ]
-# data_c = [Size, Block size, IO-DEPTH, Thread]
+    # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
+    data_b = performanceEntry()  # list of list data
+    status("<--------- Performance Entry Data Collection Completed! --------->", 1)
 
-
-final = [data_a, data_b, data_c]
-# print(final)
-excelPlot(final,"BPC0")
-status("<--------- Excel Ready! --------->", 1)
+    # ............................. <<< SCRIPT ENTRY DATA COLLECTION >>> ............................. #
+    data_c = infoScriptEntry(fio)  # list of list data
+    status("<--------- Script Entry Data Completed! --------->", 1)
 
 
-# create a list of cmd to perform in list and pass them one by one int Exection.
-# HostsConnectionandCommandExecution(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     directoryx=dirx,
-#     commandx="sudo su",
-# )
-# HostsFileTransfer(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     localFileNameWithLocation=y[0],
-#     remoteFileNameWithLocation="/root/fio/a.txt",  # /home/qa/test/preCondition/bpc0.sh",
-# )
-# HostsConnectionandCommandExecution(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     directoryx=dirx,
-#     commandx="chmod -R 777 a.txt",
-# )
-
-# x = HostsConnectionandCommandExecution(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     directoryx=dirx,
-#     commandx="cat a.txt",
-# )
-# print(x)
-
-# HostsConnectionandCommandExecution(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     directoryx=dirx,
-#     commandx="( nvme id-ctrl /dev/nvme0 ; nvme list ) >> controlerData.txt",
-# )
-
-# HostsFileTransfer(
-#     server=server,
-#     username=user,
-#     password=passd,
-#     localFileNameWithLocation="Performance_Benchmark_Automaton/logs/ctrl_res.txt",
-#     remoteFileNameWithLocation="/root/fio/controlerData.txt",
-#     copyToServer=False,
-# )
+    final = [data_a, data_b, data_c]
+    # print(final)
+    excelPlot(final,"BPC0")
+    status("<--------- Excel Ready! --------->", 1)
+    
+# ExeBPC0("10.207.48.244")

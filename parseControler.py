@@ -1,9 +1,13 @@
 from supportFunction_performance import removeExtraSpace
 from supportFunction_performance import stringToList
+from os.path import dirname
+
 
 def parseControlerData():
+    
+    localPath= dirname(__file__)
 
-    file = [f"Performance_Benchmark_Automaton\\logs\\ctrl_res.txt"]   
+    file = ["{0}\\logs\\ctrl_res.txt".format(localPath)]   
 
     mylines = []
     with open(file[0]) as fp:
@@ -15,8 +19,8 @@ def parseControlerData():
     capacity = mylines[4] + " " + mylines[5] 
     firmware = mylines[-2]  
 
-    print("Firmware Rev. : ".format(firmware))
-    print("Capacity : ".format(capacity))   
+    # print("Firmware Rev. : ".format(firmware))
+    # print("Capacity : ".format(capacity))   
 
     proData_2 = [firmware, capacity]
     
