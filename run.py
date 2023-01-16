@@ -5,7 +5,7 @@ from os.path import dirname
 # x= dirname(__file__)
 # print("{}\\burst.txt".format(x))
 
-user_server = input("Please Enter Ip address: ")
+user_server = input("\nPlease Enter Ip address: ")
 
 print("\n1 - Both BPC0 and BPC1")
 print("2 - Only BPC0")
@@ -18,12 +18,18 @@ if Opr == "1":
     ExeBPC0(user_server)
     print("\n<<<<<<<< BPC1 Triggered! >>>>>>>>\n")
     ExeBPC1(user_server)
+    
+    print("\n ************ Task Accomplished ************ ")
 elif Opr == "2":
     print("\n<<<<<<<< BPC0 Triggered! >>>>>>>>\n")
     ExeBPC0(user_server)
+    print("\n ************ Task Accomplished ************ ")
+    
 elif Opr == "3":
     print("\n<<<<<<<< BPC1 Triggered! >>>>>>>>\n")
     ExeBPC1(user_server)
+    print("\n ************ Task Accomplished ************ ")
+    
 else:
     print("Please choose Appropiate option!")
     exit()
