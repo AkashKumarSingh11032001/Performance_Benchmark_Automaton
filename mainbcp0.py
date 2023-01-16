@@ -33,7 +33,7 @@ fio = [
 x = ["C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\preCondition\\x.sh"]
 y = ["Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"]
 
-server = "10.207.48.244"  # "10.207.48.182"
+server = "10.207.48.142"#"10.207.50.183" #"10.207.48.244"  # "10.207.48.182"
 user = "root"
 passd = "12"
 
@@ -41,7 +41,10 @@ dirx = "/root/fio/"
 
 
 def FIOexecution(server, user, passd, dirx, fio):
-   
+    
+    # <<< DRIVE FORMAT >>>
+    driveFormat(server, user, passd, dirx)
+    status("FORMAT DONE!", 0.5)
 
     # <--------- BURST SEQUENTIAL WRITE --------->
     burst_seqwr(server, user, passd, dirx, fio[0])
@@ -51,9 +54,9 @@ def FIOexecution(server, user, passd, dirx, fio):
     burst_seqrd(server, user, passd, dirx, fio[1])
     status("<--------- BURST SEQUENTIAL READ is been implemented! --------->", 1)
 
-    # <<< DRIVE FORMAT >>>
-    driveFormat(server, user, passd, dirx)
-    status("FORMAT DONE!", 0.5)
+    # # <<< DRIVE FORMAT >>>
+    # driveFormat(server, user, passd, dirx)
+    # status("FORMAT DONE!", 0.5)
 
     # <--------- SUSTAINED SEQUENTIAL WRITE --------->
     sus_seqwr(server, user, passd, dirx, fio[2])
@@ -63,9 +66,9 @@ def FIOexecution(server, user, passd, dirx, fio):
     sus_seqrd(server, user, passd, dirx, fio[3])
     status("<--------- SUSTAINED SEQUENTIAL READ is been implemented! --------->", 1)
 
-    # <<< DRIVE FORMAT >>>
-    driveFormat(server, user, passd, dirx)
-    status("FORMAT DONE!", 0.5)
+    # # <<< DRIVE FORMAT >>>
+    # driveFormat(server, user, passd, dirx)
+    # status("FORMAT DONE!", 0.5)
 
     # <--------- BURST RANDOM WRITE --------->
     burst_randwr(server, user, passd, dirx, fio[4])
@@ -75,9 +78,9 @@ def FIOexecution(server, user, passd, dirx, fio):
     burst_randrd(server, user, passd, dirx, fio[5])
     status("<--------- BURST RANDOM READ is been implemented! --------->", 1)
 
-    # <<< DRIVE FORMAT >>>
-    driveFormat(server, user, passd, dirx)
-    status("FORMAT DONE!", 0.5)
+    # # <<< DRIVE FORMAT >>>
+    # driveFormat(server, user, passd, dirx)
+    # status("FORMAT DONE!", 0.5)
 
     # <--------- BURST RANDOM WRITE OIO --------->
     burst_randwr_oio(server, user, passd, dirx, fio[6])

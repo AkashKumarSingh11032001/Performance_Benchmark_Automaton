@@ -33,7 +33,7 @@ data_X = [
 
 def excelPlot(data):
 
-    excelName = data[0][0] + "_" + data[0][1] + ".xlsx"
+    excelName = "FC3.1_BPC1_1.xlsx"#data[0][0] + "_" + data[0][1] + ".xlsx"
     workbook = xlsxwriter.Workbook(excelName)
     worksheet = workbook.add_worksheet()
     
@@ -42,6 +42,8 @@ def excelPlot(data):
     Cellformat_3 = workbook.add_format({'border': 1})
     heading = workbook.add_format({'border': 2,'bold': True})
     heading_2 = workbook.add_format({'border': 2,'bold': True,'center_across': True})
+    
+    bpc_state = "BPC0"
 
     # Drive Standard Configuration.
     worksheet.write("A1", "Standard Device Config.", heading)
@@ -84,7 +86,7 @@ def excelPlot(data):
     worksheet.write("C6", data[2][fileIndex][1], Cellformat_1)
     worksheet.write("D6", data[2][fileIndex][2], Cellformat_1)
     worksheet.write("E6", data[2][fileIndex][3], Cellformat_1)
-    worksheet.write("F6", "BPC1", Cellformat_1)
+    worksheet.write("F6", bpc_state, Cellformat_1)
     worksheet.write("G6", data[1][fileIndex][0], Cellformat_1)
     worksheet.write("H6", data[1][fileIndex][1], Cellformat_1)
     worksheet.write("I6", data[1][fileIndex][2], Cellformat_1)
@@ -102,7 +104,7 @@ def excelPlot(data):
     worksheet.write("C7", data[2][fileIndex][1], Cellformat_1)
     worksheet.write("D7", data[2][fileIndex][2], Cellformat_1)
     worksheet.write("E7", data[2][fileIndex][3], Cellformat_1)
-    worksheet.write("F7", "BPC1", Cellformat_1)
+    worksheet.write("F7", bpc_state, Cellformat_1)
     worksheet.write("G7", data[1][fileIndex][0], Cellformat_1)
     worksheet.write("H7", data[1][fileIndex][1], Cellformat_1)
     worksheet.write("I7", data[1][fileIndex][2], Cellformat_1)
@@ -120,7 +122,7 @@ def excelPlot(data):
     worksheet.write("C8", data[2][fileIndex][1], Cellformat_1)
     worksheet.write("D8", data[2][fileIndex][2], Cellformat_1)
     worksheet.write("E8", data[2][fileIndex][3], Cellformat_1)
-    worksheet.write("F8", "BPC1", Cellformat_1)
+    worksheet.write("F8", bpc_state, Cellformat_1)
     worksheet.write("G8", data[1][fileIndex][0], Cellformat_1)
     worksheet.write("H8", data[1][fileIndex][1], Cellformat_1)
     worksheet.write("I8", data[1][fileIndex][2], Cellformat_1)
@@ -138,7 +140,7 @@ def excelPlot(data):
     worksheet.write("C9", data[2][fileIndex][1], Cellformat_1)
     worksheet.write("D9", data[2][fileIndex][2], Cellformat_1)
     worksheet.write("E9", data[2][fileIndex][3], Cellformat_1)
-    worksheet.write("F9", "BPC1", Cellformat_1)
+    worksheet.write("F9", bpc_state, Cellformat_1)
     worksheet.write("G9", data[1][fileIndex][0], Cellformat_1)
     worksheet.write("H9", data[1][fileIndex][1], Cellformat_1)
     worksheet.write("I9", data[1][fileIndex][2], Cellformat_1)
@@ -156,7 +158,7 @@ def excelPlot(data):
     worksheet.write("C10", data[2][fileIndex][1], Cellformat_1)
     worksheet.write("D10", data[2][fileIndex][2], Cellformat_1)
     worksheet.write("E10", data[2][fileIndex][3], Cellformat_1)
-    worksheet.write("F10", "BPC1", Cellformat_1)
+    worksheet.write("F10", bpc_state, Cellformat_1)
     worksheet.write("G10", data[1][fileIndex][0], Cellformat_1)
     worksheet.write("H10", data[1][fileIndex][1], Cellformat_1)
     worksheet.write("I10", data[1][fileIndex][2], Cellformat_1)
@@ -174,7 +176,7 @@ def excelPlot(data):
     worksheet.write("C11", data[2][fileIndex][1], Cellformat_1)
     worksheet.write("D11", data[2][fileIndex][2], Cellformat_1)
     worksheet.write("E11", data[2][fileIndex][3], Cellformat_1)
-    worksheet.write("F11", "BPC1", Cellformat_1)
+    worksheet.write("F11", bpc_state, Cellformat_1)
     worksheet.write("G11", data[1][fileIndex][0], Cellformat_1)
     worksheet.write("H11", data[1][fileIndex][1], Cellformat_1)
     worksheet.write("I11", data[1][fileIndex][2], Cellformat_1)
@@ -192,7 +194,7 @@ def excelPlot(data):
     worksheet.write("C12", data[2][fileIndex][1], Cellformat_1)
     worksheet.write("D12", data[2][fileIndex][2], Cellformat_1)
     worksheet.write("E12", data[2][fileIndex][3], Cellformat_1)
-    worksheet.write("F12", "BPC1", Cellformat_1)
+    worksheet.write("F12", bpc_state, Cellformat_1)
     worksheet.write("G12", data[1][fileIndex][0], Cellformat_1)
     worksheet.write("H12", data[1][fileIndex][1], Cellformat_1)
     worksheet.write("I12", data[1][fileIndex][2], Cellformat_1)
@@ -210,7 +212,7 @@ def excelPlot(data):
     worksheet.write("C13", data[2][fileIndex][1], Cellformat_1)
     worksheet.write("D13", data[2][fileIndex][2], Cellformat_1)
     worksheet.write("E13", data[2][fileIndex][3], Cellformat_1)
-    worksheet.write("F13", "BPC1", Cellformat_1)
+    worksheet.write("F13", bpc_state, Cellformat_1)
     worksheet.write("G13", data[1][fileIndex][0], Cellformat_1)
     worksheet.write("H13", data[1][fileIndex][1], Cellformat_1)
     worksheet.write("I13", data[1][fileIndex][2], Cellformat_1)

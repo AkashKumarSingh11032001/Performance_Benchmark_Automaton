@@ -33,7 +33,7 @@ fio = [
 x = ["C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\preCondition\\x.sh"]
 y = ["Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"]
 
-server = "10.207.48.244"  # "10.207.48.182"
+server = "10.207.48.88" #"10.207.48.244"  # "10.207.48.182" # "10.207.48.88"
 user = "root"
 passd = "12"
 
@@ -41,14 +41,16 @@ dirx = "/root/fio/"
 
 
 def FIOexecution(server, user, passd, dirx, fio):
+    
+    # <<< DRIVE FORMAT >>>
+    driveFormat(server, user, passd, dirx)
+    status("FORMAT DONE!", 0.5)
+    
     # <------------------> BPC1 ------------------>
     bpc_1 = "preCondition\\bpc1.txt"
     bpc1(server, user, passd, dirx, bpc_1)
     status("<--------- Precondition BPC1 is been implemented! --------->", 1)
 
-    # <<< DRIVE FORMAT >>>
-    driveFormat(server, user, passd, dirx)
-    status("FORMAT DONE!", 0.5)
 
     # <--------- BURST SEQUENTIAL WRITE --------->
     burst_seqwr(server, user, passd, dirx, fio[0])
@@ -58,9 +60,6 @@ def FIOexecution(server, user, passd, dirx, fio):
     burst_seqrd(server, user, passd, dirx, fio[1])
     status("<--------- BURST SEQUENTIAL READ is been implemented! --------->", 1)
 
-    # <<< DRIVE FORMAT >>>
-    driveFormat(server, user, passd, dirx)
-    status("FORMAT DONE!", 0.5)
 
     # <--------- SUSTAINED SEQUENTIAL WRITE --------->
     sus_seqwr(server, user, passd, dirx, fio[2])
@@ -70,10 +69,6 @@ def FIOexecution(server, user, passd, dirx, fio):
     sus_seqrd(server, user, passd, dirx, fio[3])
     status("<--------- SUSTAINED SEQUENTIAL READ is been implemented! --------->", 1)
 
-    # <<< DRIVE FORMAT >>>
-    driveFormat(server, user, passd, dirx)
-    status("FORMAT DONE!", 0.5)
-
     # <--------- BURST RANDOM WRITE --------->
     burst_randwr(server, user, passd, dirx, fio[4])
     status("<--------- BURST RANDOM WRITE is been implemented! --------->", 1)
@@ -81,10 +76,6 @@ def FIOexecution(server, user, passd, dirx, fio):
     # <--------- BURST RANDOM READ --------->
     burst_randrd(server, user, passd, dirx, fio[5])
     status("<--------- BURST RANDOM READ is been implemented! --------->", 1)
-
-    # <<< DRIVE FORMAT >>>
-    driveFormat(server, user, passd, dirx)
-    status("FORMAT DONE!", 0.5)
 
     # <--------- BURST RANDOM WRITE OIO --------->
     burst_randwr_oio(server, user, passd, dirx, fio[6])
@@ -95,19 +86,19 @@ def FIOexecution(server, user, passd, dirx, fio):
     status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
 
 
-# ............................. <<< Controler Identify >>>  ............................. #
+# # ............................. <<< Controler Identify >>>  ............................. #
 identifyCtrl(server, user, passd, dirx)
 data_a = parseControlerData()  # single list data
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
-# ............................. <<< FIO SCRIPT EXECUTION >>>.............................
+# # ............................. <<< FIO SCRIPT EXECUTION >>>.............................
 FIOexecution(server, user, passd, dirx, fio)
 
-# ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
+# # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
 data_b = performanceEntry()  # list of list data
 status("<--------- Performance Entry Data Collection Completed! --------->", 1)
 
-# ............................. <<< SCRIPT ENTRY DATA COLLECTION >>> ............................. #
+# # ............................. <<< SCRIPT ENTRY DATA COLLECTION >>> ............................. #
 data_c = infoScriptEntry(fio)  # list of list data
 status("<--------- Script Entry Data Completed! --------->", 1)
 
