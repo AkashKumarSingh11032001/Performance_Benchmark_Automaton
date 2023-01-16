@@ -31,10 +31,10 @@ data_X = [
 ]
 
 
-def excelPlot(data):
+def excelPlot(data,opr):
 
-    excelName = "FC3.1_BPC1_1.xlsx"#data[0][0] + "_" + data[0][1] + ".xlsx"
-    workbook = xlsxwriter.Workbook(excelName)
+    excelName = data[0][0] + "_" + data[0][1] + "_" + opr + ".xlsx" #"FC3.1_BPC1_1.xlsx"
+    workbook = xlsxwriter.Workbook("Performance_Benchmark_Automaton\\results\\{0}".format(excelName))
     worksheet = workbook.add_worksheet()
     
     Cellformat_1 = workbook.add_format({'border': 2,'italic': True,'center_across': True})
@@ -43,7 +43,7 @@ def excelPlot(data):
     heading = workbook.add_format({'border': 2,'bold': True})
     heading_2 = workbook.add_format({'border': 2,'bold': True,'center_across': True})
     
-    bpc_state = "BPC0"
+    bpc_state = opr
 
     # Drive Standard Configuration.
     worksheet.write("A1", "Standard Device Config.", heading)
@@ -223,8 +223,9 @@ def excelPlot(data):
     worksheet.write("N13", data[1][fileIndex][7], Cellformat_1)
     worksheet.write("O13", data[1][fileIndex][8], Cellformat_1)
     worksheet.write("P13", data[1][fileIndex][9], Cellformat_1)
-
+    
+    # workbook.save()
     workbook.close()
 
 
-excelPlot(data_X)
+# excelPlot(data_X)

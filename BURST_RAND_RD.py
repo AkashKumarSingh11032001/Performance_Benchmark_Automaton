@@ -31,7 +31,7 @@ def burst_randrd(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="logs\\burst_randrd.log",
+        localFileNameWithLocation="Performance_Benchmark_Automaton\\logs\\burst_randrd.log",
         remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )

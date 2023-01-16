@@ -31,7 +31,7 @@ def sus_seqrd(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="logs\\sus_seqrd.log",
+        localFileNameWithLocation="Performance_Benchmark_Automaton\\logs\\sus_seqrd.log",
         remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )

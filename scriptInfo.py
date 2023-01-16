@@ -5,14 +5,14 @@ from supportFunction_performance import stringToList
 from supportFunction import pickNum
 
 fio = [
-    "fioScripts\\burst_seqwr.txt",
-    "fioScripts\\burst_seqrd.txt",
-    "fioScripts\\sus_seqwr.txt",
-    "fioScripts\\sus_seqrd.txt",
-    "fioScripts\\burst_randwr.txt",
-    "fioScripts\\burst_randrd.txt",
-    "fioScripts\\burst_randwr_oio.txt",
-    "fioScripts\\burst_randrd_oio.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
 ]
 
 def element(pattern,mylines):
@@ -46,7 +46,7 @@ def infoScriptEntry(fio):
         with open(file[i]) as fp:
             for x in fp:
                 mylines.append(x)
-        if file[i] in ["fioScripts\\burst_randwr.txt","fioScripts\\burst_randrd.txt"]:
+        if file[i] in ["Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt","Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt"]:
             res = element(pattern,mylines)
             size = pickNum(res[0][:-1])
             block = pickNum(res[1][-6:-1])+"KB"

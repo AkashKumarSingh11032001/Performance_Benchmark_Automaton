@@ -31,7 +31,7 @@ def burst_randwr_oio(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="logs\\burst_randwr_oio.log",
+        localFileNameWithLocation="Performance_Benchmark_Automaton\\logs\\burst_randwr_oio.log",
         remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )

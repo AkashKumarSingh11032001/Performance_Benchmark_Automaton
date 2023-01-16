@@ -3,7 +3,7 @@ from supportFunction_performance import stringToList
 
 def parseControlerData():
 
-    file = ["logs\\ctrl_res.txt"]   
+    file = [f"Performance_Benchmark_Automaton\\logs\\ctrl_res.txt"]   
 
     mylines = []
     with open(file[0]) as fp:
@@ -23,7 +23,7 @@ def parseControlerData():
     return proData_2
 
 
-data_2 = parseControlerData()
-print(data_2)
+# data_2 = parseControlerData()
+# print(data_2)
 
 

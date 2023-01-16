@@ -19,21 +19,21 @@ from dataOverview import excelPlot
 
 
 fio = [
-    "fioScripts\\burst_seqwr.txt",
-    "fioScripts\\burst_seqrd.txt",
-    "fioScripts\\sus_seqwr.txt",
-    "fioScripts\\sus_seqrd.txt",
-    "fioScripts\\burst_randwr.txt",
-    "fioScripts\\burst_randrd.txt",
-    "fioScripts\\burst_randwr_oio.txt",
-    "fioScripts\\burst_randrd_oio.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
+    "Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
 ]
 
 # <--------- testing-fio script --------->
 x = ["C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\preCondition\\x.sh"]
 y = ["Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"]
 
-server = "10.207.48.142"#"10.207.53.94"#"10.207.50.183" #  # "10.207.48.182"
+server = "10.207.48.244"#"10.207.48.142"#"10.207.53.94"#"10.207.50.183" #  # "10.207.48.182"
 user = "root"
 passd = "12"
 
@@ -101,7 +101,7 @@ data_a = parseControlerData()  # single list data
 status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
 # ............................. <<< FIO SCRIPT EXECUTION >>>.............................
-FIOexecution(server, user, passd, dirx, fio)
+# FIOexecution(server, user, passd, dirx, fio)
 
 # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
 data_b = performanceEntry()  # list of list data
@@ -119,7 +119,7 @@ status("<--------- Script Entry Data Completed! --------->", 1)
 
 final = [data_a, data_b, data_c]
 # print(final)
-excelPlot(final)
+excelPlot(final,"BPC1")
 status("<--------- Excel Ready! --------->", 1)
 
 

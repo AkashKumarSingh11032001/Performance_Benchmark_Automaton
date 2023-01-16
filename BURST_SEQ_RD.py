@@ -31,7 +31,7 @@ def burst_seqrd(server, user, passd, dirx, doc):
         server=server,
         username=user,
         password=passd,
-        localFileNameWithLocation="logs\\burst_seqrd.log",
+        localFileNameWithLocation="Performance_Benchmark_Automaton\\logs\\burst_seqrd.log",
         remoteFileNameWithLocation="/root/fio/res.log",
         copyToServer=False,
     )
