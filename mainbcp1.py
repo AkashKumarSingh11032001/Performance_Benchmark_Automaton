@@ -17,6 +17,8 @@ from scriptInfo import infoScriptEntry
 from formatDrive import driveFormat
 from dataOverview import excelPlot
 from os.path import dirname
+localPath= dirname(__file__)
+
 
 
 # fio = [
@@ -92,18 +94,19 @@ def ExeBPC1(Userserver):
 
     dirx = "/root/fio/"
     
-    localPath= dirname(__file__)
     # print("{}\\burst.txt".format(x))
     
+    dirx = "/root/fio/"
+    # C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\fioScripts\burst_randrd_oio.txt
     fio = [
-    "{0}\\fioScripts\\burst_seqwr.txt".format(localPath),
-    "{0}\\fioScripts\\burst_seqrd.txt".format(localPath),
-    "{0}\\fioScripts\\sus_seqwr.txt".format(localPath),
-    "{0}\\fioScripts\\sus_seqrd.txt".format(localPath),
-    "{0}\\fioScripts\\burst_randwr.txt".format(localPath),
-    "{0}\\fioScripts\\burst_randrd.txt".format(localPath),
-    "{0}\\fioScripts\\burst_randwr_oio.txt".format(localPath),
-    "{0}\\fioScripts\\burst_randrd_oio.txt".format(localPath),
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
     ]
 
     # <--------- testing-fio script --------->
@@ -116,7 +119,7 @@ def ExeBPC1(Userserver):
     status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
     # ............................. <<< FIO SCRIPT EXECUTION >>>.............................
-    # FIOexecutionBPC1(server, user, passd, dirx, fio)
+    FIOexecutionBPC1(server, user, passd, dirx, fio)
 
     # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
     data_b = performanceEntry()  # list of list data
