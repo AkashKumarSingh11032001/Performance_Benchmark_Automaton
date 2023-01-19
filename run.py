@@ -14,10 +14,14 @@ Opr = input("Select Opration you want to Perform on your drive: ")
 
 
 if Opr == "1":
+    # HMB ON
     print("\n<<<<<<<< BPC0 Triggered! >>>>>>>>\n")
     ExeBPC0(user_server)
     print("\n<<<<<<<< BPC1 Triggered! >>>>>>>>\n")
     ExeBPC1(user_server)
+    # HMB OFF
+    # CMD
+    
     
     print("\n ************ Task Accomplished ************ ")
 elif Opr == "2":

@@ -1,21 +1,21 @@
 job1: (g=0): rw=write, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=8
 fio-3.16
 Starting 1 thread
-
-job1: (groupid=0, jobs=1): err= 0: pid=3191: Fri Jan 13 10:43:56 2023
-  write: IOPS=12.4k, BW=1556MiB/s (1632MB/s)(1024MiB/658msec); 0 zone resets
-    slat (usec): min=48, max=137, avg=59.80, stdev= 5.22
-    clat (usec): min=103, max=4841, avg=580.36, stdev=271.15
-     lat (usec): min=165, max=4900, avg=640.50, stdev=271.43
+Jobs: 1 (f=1)Jobs: 1 (f=1)
+job1: (groupid=0, jobs=1): err= 0: pid=6987: Wed Jan 18 10:45:07 2023
+  write: IOPS=3512, BW=439MiB/s (460MB/s)(1024MiB/2332msec); 0 zone resets
+    slat (usec): min=4, max=171, avg=36.51, stdev=11.05
+    clat (usec): min=291, max=9577, avg=2236.07, stdev=707.03
+     lat (usec): min=344, max=9605, avg=2273.11, stdev=705.15
      lat percentiles (usec):
-     | 50.0000th=[  603], 75.0000th=[  627], 99.0000th=[  881],
-     | 99.9000th=[ 4817], 99.9900th=[ 4883], 99.9990th=[ 4883],
-     | 99.9999th=[ 4883]
-   bw (  MiB/s): min= 1553, max= 1553, per=99.79%, avg=1553.00, stdev= 0.00, samples=1
-   iops        : min=12424, max=12424, avg=12424.00, stdev= 0.00, samples=1
-  lat (usec)   : 250=0.02%, 500=0.05%, 750=98.57%, 1000=0.38%
-  lat (msec)   : 4=0.78%, 10=0.20%
-  cpu          : usr=39.88%, sys=56.32%, ctx=37, majf=0, minf=1
+     | 50.0000th=[ 2024], 75.0000th=[ 2671], 99.0000th=[ 5211],
+     | 99.9000th=[ 8160], 99.9900th=[ 9634], 99.9990th=[ 9634],
+     | 99.9999th=[ 9634]
+   bw (  KiB/s): min=446208, max=455680, per=100.00%, avg=450944.00, stdev=3979.68, samples=4
+   iops        : min= 3486, max= 3560, avg=3523.00, stdev=31.09, samples=4
+  lat (usec)   : 500=0.02%
+  lat (msec)   : 2=51.11%, 4=46.96%, 10=1.90%
+  cpu          : usr=8.41%, sys=11.28%, ctx=5123, majf=0, minf=1
   IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=99.9%, 16=0.0%, 32=0.0%, >=64=0.0%
      submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
      complete  : 0=0.0%, 4=100.0%, 8=0.1%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
@@ -23,7 +23,7 @@ job1: (groupid=0, jobs=1): err= 0: pid=3191: Fri Jan 13 10:43:56 2023
      latency   : target=0, window=0, percentile=100.00%, depth=8
 
 Run status group 0 (all jobs):
-  WRITE: bw=1556MiB/s (1632MB/s), 1556MiB/s-1556MiB/s (1632MB/s-1632MB/s), io=1024MiB (1074MB), run=658-658msec
+  WRITE: bw=439MiB/s (460MB/s), 439MiB/s-439MiB/s (460MB/s-460MB/s), io=1024MiB (1074MB), run=2332-2332msec
 
 Disk stats (read/write):
   nvme0n1: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
