@@ -1,6 +1,6 @@
 from conectionBetweenTwoHost import HostsConnectionandCommandExecution
 from conectionBetweenTwoHost import HostsFileTransfer
-
+from os.path import dirname
 
 def bpc1(server, user, passd, dirx, doc):
     

@@ -107,7 +107,7 @@ def ExeBPC0(Userserver):
     status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
     # ............................. <<< FIO SCRIPT EXECUTION >>>.............................
-    # FIOexecutionBPC0(server, user, passd, dirx, fio)
+    FIOexecutionBPC0(server, user, passd, dirx, fio)
 
     # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
     data_b = performanceEntry()  # list of list data
