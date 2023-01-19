@@ -84,7 +84,7 @@ def FIOexecutionBPC1(server, user, passd, dirx, fio):
     status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
 
 
-def ExeBPC1(Userserver):
+def ExeBPC1(Userserver,hmb):
 
     server = Userserver
     user = "root"
@@ -129,7 +129,7 @@ def ExeBPC1(Userserver):
 
     final = [data_a, data_b, data_c]
     # print(final)
-    excelPlot(final,"BPC1")
+    excelPlot(final,"BPC1",hmb)
     status("<--------- Excel Ready! --------->", 1)
 
 # ExeBPC1("10.207.48.244")

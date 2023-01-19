@@ -34,9 +34,9 @@ data_X = [
 ]
 
 
-def excelPlot(data,opr):
+def excelPlot(data,opr,hmb):
 
-    excelName = data[0][0] + "_" + data[0][1] + "_" + opr + ".xlsx" #"FC3.1_BPC1_1.xlsx"
+    excelName = data[0][0] + "_" + data[0][1] + "_" + opr + "_" + hmb +".xlsx" #"FC3.1_BPC1_1.xlsx"
     workbook = xlsxwriter.Workbook("{0}\\results\\{1}".format(localPath,excelName))
     worksheet = workbook.add_worksheet()
     

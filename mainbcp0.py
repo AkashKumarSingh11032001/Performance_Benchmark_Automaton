@@ -78,7 +78,7 @@ def FIOexecutionBPC0(server, user, passd, dirx, fio):
     burst_randrd_oio(server, user, passd, dirx, fio[7])
     status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
 
-def ExeBPC0(Userserver):
+def ExeBPC0(Userserver,hmb):
 
     server = Userserver
     user = "root"
@@ -87,14 +87,14 @@ def ExeBPC0(Userserver):
     dirx = "/root/fio/"
     # C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\fioScripts\burst_randrd_oio.txt
     fio = [
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
     ]
 
     # <--------- testing-fio script --------->
@@ -120,7 +120,7 @@ def ExeBPC0(Userserver):
 
     final = [data_a, data_b, data_c]
     # print(final)
-    excelPlot(final,"BPC0")
+    excelPlot(final,"BPC0",hmb)
     status("<--------- Excel Ready! --------->", 1)
     
 # ExeBPC0("10.207.48.244")
