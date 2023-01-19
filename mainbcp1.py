@@ -92,7 +92,7 @@ def ExeBPC1(Userserver):
 
     dirx = "/root/fio/"
     
-    localPath= dirname(__file__)
+    localPath = dirname(__file__)
     # print("{}\\burst.txt".format(x))
     
     fio = [
