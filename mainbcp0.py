@@ -16,7 +16,10 @@ from performance import performanceEntry
 from scriptInfo import infoScriptEntry
 from formatDrive import driveFormat
 from dataOverview import excelPlot
+from os.path import dirname
 
+localPath = dirname(__file__)
+print(localPath)
 
 # fio = [
 #     "Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
@@ -87,14 +90,14 @@ def ExeBPC0(Userserver):
     dirx = "/root/fio/"
     # C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\fioScripts\burst_randrd_oio.txt
     fio = [
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
+    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
     ]
 
     # <--------- testing-fio script --------->

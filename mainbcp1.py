@@ -16,9 +16,6 @@ from performance import performanceEntry
 from scriptInfo import infoScriptEntry
 from formatDrive import driveFormat
 from dataOverview import excelPlot
-from os.path import dirname
-
-localPath = dirname(__file__)
 
 
 
