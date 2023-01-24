@@ -89,7 +89,7 @@ elif Opr == "4":
     print("\n<<<<<<<< BPC1 Triggered! >>>>>>>>\n")
     ExeBPC1(user_server, "HMB_OFF")
     print("\n ************ Task Accomplished ************ ")
-    
+
 elif Opr == "5":
     # <<<<< HMB ON >>>>>
     print("\n|||||||||||||||||||||\n")
@@ -98,7 +98,6 @@ elif Opr == "5":
 
     print("\n<<<<<<<< BPC0 Triggered! >>>>>>>>\n")
     ExeBPC0(user_server, "HMB_ON")
-    
 
     # <<<<< HMB Condition >>>>>
     print("\n|||||||||||||||||||||\n")

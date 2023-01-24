@@ -17,6 +17,9 @@ from scriptInfo import infoScriptEntry
 from formatDrive import driveFormat
 from dataOverview import excelPlot
 from os.path import dirname
+localPath = dirname(__file__)
+# print(localPath)
+
 
 
 # fio = [
@@ -43,7 +46,7 @@ from os.path import dirname
 
 def FIOexecutionBPC1(server, user, passd, dirx, fio):
     
-    localPath= dirname(__file__)
+
     
     # <------------------> BPC1 ------------------>
     bpc_1 = "{0}\\preCondition\\bpc1.txt".format(localPath)
@@ -91,8 +94,11 @@ def ExeBPC1(Userserver,hmb):
     passd = "12"
 
     dirx = "/root/fio/"
+    # localPath = dirname(__file__)
+    # print(localPath)
     
-    localPath = dirname(__file__)
+    
+    
     # print("{}\\burst.txt".format(x))
     
     fio = [
@@ -116,7 +122,7 @@ def ExeBPC1(Userserver,hmb):
     status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
     # ............................. <<< FIO SCRIPT EXECUTION >>>.............................
-    # FIOexecutionBPC1(server, user, passd, dirx, fio)
+    FIOexecutionBPC1(server, user, passd, dirx, fio)
 
     # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
     data_b = performanceEntry()  # list of list data
@@ -132,5 +138,5 @@ def ExeBPC1(Userserver,hmb):
     excelPlot(final,"BPC1",hmb)
     status("<--------- Excel Ready! --------->", 1)
 
-# ExeBPC1("10.207.48.244")
+# ExeBPC1("10.207.48.244","HMBON")
 

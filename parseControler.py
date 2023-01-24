@@ -15,12 +15,12 @@ def parseControlerData():
             mylines.append(removeExtraSpace(x))
  
     mylines = stringToList(mylines[2], " ") 
-    # print(mylines)
-    capacity = mylines[4] + " " + mylines[5] 
-    firmware = mylines[-2]  
+    print(mylines)
+    capacity = mylines[5] + " " + mylines[6] 
+    firmware = mylines[-2] 
 
-    # print("Firmware Rev. : ".format(firmware))
-    # print("Capacity : ".format(capacity))   
+    print("Firmware Rev. : ".format(firmware))
+    print("Capacity : ".format(capacity))   
 
     proData_2 = [firmware, capacity]
     

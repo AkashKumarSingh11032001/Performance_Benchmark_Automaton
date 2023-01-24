@@ -34,7 +34,7 @@ def HmbOnOff(server, user, passd, dirx):
         username=user,
         password=passd,
         directoryx=dirx,
-        # commandx="nvme set-feature /dev/nvme0 -f 0x0d -v 0x00",
-        commandx="echo Hello World!",    
+        commandx="nvme set-feature /dev/nvme0 -f 0x0d -v 0x00",
+        # commandx="echo Hello World!",    
     )
     
