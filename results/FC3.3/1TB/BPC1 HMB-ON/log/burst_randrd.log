@@ -1,0 +1,28 @@
+job1: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=32
+fio-3.16
+Starting 1 thread
+Jobs: 1 (f=1)
+job1: (groupid=0, jobs=1): err= 0: pid=7395: Wed Jan 25 11:01:58 2023
+  read: IOPS=273k, BW=1066MiB/s (1117MB/s)(1024MiB/961msec)
+    slat (nsec): min=748, max=42637, avg=1188.71, stdev=429.31
+    clat (usec): min=51, max=596, avg=115.75, stdev=43.26
+     lat (usec): min=52, max=597, avg=117.00, stdev=43.31
+     lat percentiles (usec):
+     | 50.0000th=[  102], 75.0000th=[  135], 99.0000th=[  273],
+     | 99.9000th=[  367], 99.9900th=[  469], 99.9990th=[  570],
+     | 99.9999th=[  594]
+   bw (  MiB/s): min= 1063, max= 1063, per=99.80%, avg=1063.38, stdev= 0.00, samples=1
+   iops        : min=272224, max=272224, avg=272224.00, stdev= 0.00, samples=1
+  lat (usec)   : 100=48.48%, 250=49.87%, 500=1.64%, 750=0.01%
+  cpu          : usr=18.96%, sys=41.46%, ctx=110106, majf=0, minf=33
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=100.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.1%, 64=0.0%, >=64=0.0%
+     issued rwts: total=262144,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=32
+
+Run status group 0 (all jobs):
+   READ: bw=1066MiB/s (1117MB/s), 1066MiB/s-1066MiB/s (1117MB/s-1117MB/s), io=1024MiB (1074MB), run=961-961msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%

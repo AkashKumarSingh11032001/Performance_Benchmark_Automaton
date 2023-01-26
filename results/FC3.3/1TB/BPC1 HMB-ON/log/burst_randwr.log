@@ -1,0 +1,30 @@
+job1: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=32
+fio-3.16
+Starting 1 thread
+Jobs: 1 (f=1)
+job1: (groupid=0, jobs=1): err= 0: pid=7140: Wed Jan 25 11:01:54 2023
+  write: IOPS=213k, BW=834MiB/s (874MB/s)(1024MiB/1228msec); 0 zone resets
+    slat (nsec): min=772, max=82006, avg=1354.16, stdev=702.61
+    clat (usec): min=42, max=8713, avg=148.16, stdev=271.01
+     lat (usec): min=44, max=8714, avg=149.59, stdev=271.00
+     lat percentiles (usec):
+     | 50.0000th=[   84], 75.0000th=[  155], 99.0000th=[  676],
+     | 99.9000th=[ 5080], 99.9900th=[ 6652], 99.9990th=[ 8717],
+     | 99.9999th=[ 8717]
+   bw (  KiB/s): min=844832, max=857696, per=99.69%, avg=851264.00, stdev=9096.22, samples=2
+   iops        : min=211208, max=214424, avg=212816.00, stdev=2274.06, samples=2
+  lat (usec)   : 50=2.54%, 100=59.17%, 250=24.51%, 500=11.41%, 750=1.59%
+  lat (usec)   : 1000=0.32%
+  lat (msec)   : 2=0.14%, 4=0.13%, 10=0.18%
+  cpu          : usr=15.00%, sys=28.61%, ctx=20292, majf=0, minf=1
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=100.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.1%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,262144,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=32
+
+Run status group 0 (all jobs):
+  WRITE: bw=834MiB/s (874MB/s), 834MiB/s-834MiB/s (874MB/s-874MB/s), io=1024MiB (1074MB), run=1228-1228msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%

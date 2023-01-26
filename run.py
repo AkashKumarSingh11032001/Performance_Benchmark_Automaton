@@ -169,7 +169,7 @@ elif Opr == "9":
     print(" \tTurning HMB ON -> HMB OFF\t")
     print("\n|||||||||||||||||||||\n")
 
-    HmbOnOff(user_server, "root", "12", "/root/fio/")
+    # HmbOnOff(user_server, "root", "12", "/root/fio/")
 
     # <<<<< HMB OFF >>>>>
     # print("\n||||||||||||||||||||| HMB OFF |||||||||||||||||||||\n")
@@ -188,7 +188,7 @@ elif Opr == "10":
     print(" \tTurning HMB ON -> HMB OFF\t")
     print("\n|||||||||||||||||||||\n")
 
-    HmbOnOff(user_server, "root", "12", "/root/fio/")
+    # HmbOnOff(user_server, "root", "12", "/root/fio/")
 
     # <<<<< HMB OFF >>>>>
     # print("\n||||||||||||||||||||| HMB OFF |||||||||||||||||||||\n")

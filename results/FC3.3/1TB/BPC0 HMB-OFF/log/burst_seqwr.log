@@ -1,0 +1,27 @@
+job1: (g=0): rw=write, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=8
+fio-3.16
+Starting 1 thread
+
+job1: (groupid=0, jobs=1): err= 0: pid=3170: Wed Jan 25 11:13:05 2023
+  write: IOPS=23.0k, BW=2876MiB/s (3016MB/s)(1024MiB/356msec); 0 zone resets
+    slat (nsec): min=4138, max=58930, avg=6379.94, stdev=2832.27
+    clat (usec): min=183, max=5434, avg=340.31, stdev=384.16
+     lat (usec): min=215, max=5456, avg=346.76, stdev=384.31
+     lat percentiles (usec):
+     | 50.0000th=[  269], 75.0000th=[  302], 99.0000th=[ 1319],
+     | 99.9000th=[ 5407], 99.9900th=[ 5473], 99.9990th=[ 5473],
+     | 99.9999th=[ 5473]
+  lat (usec)   : 250=7.86%, 500=84.66%, 750=3.69%, 1000=0.18%
+  lat (msec)   : 2=3.12%, 10=0.49%
+  cpu          : usr=12.96%, sys=5.92%, ctx=8089, majf=0, minf=1
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=99.9%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.1%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,8192,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=8
+
+Run status group 0 (all jobs):
+  WRITE: bw=2876MiB/s (3016MB/s), 2876MiB/s-2876MiB/s (3016MB/s-3016MB/s), io=1024MiB (1074MB), run=356-356msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
