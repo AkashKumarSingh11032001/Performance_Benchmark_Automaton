@@ -16,7 +16,11 @@ from performance import performanceEntry
 from scriptInfo import infoScriptEntry
 from formatDrive import driveFormat
 from dataOverview import excelPlot
-
+from allLogSaving import logSaving
+import os
+import shutil
+from os.path import dirname
+localPath = dirname(__file__)
 
 # fio = [
 #     "Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
@@ -40,8 +44,38 @@ from dataOverview import excelPlot
 # dirx = "/root/fio/"
 
 
-def FIOexecutionBPC0(server, user, passd, dirx, fio):
+# def logSaving(bpc, hmb, firmwareFolder, fileName, copyFrom):
+#     # create folder
+#     path = "{0}\\results\\{1}".format(localPath, firmwareFolder)
+#     # Check whether the specified path exists or not
+#     isExist = os.path.exists(path)
+#     if not isExist:
+#         os.makedirs(path)  # Create a new directory because it does not exist
+#         print("The new directory with {0} is created!".format(firmwareFolder))
+
+#     # copy file "original loc" to "target loc"
+#     fileName = "{0}_{1}_{2}.log".format(fileName, bpc, hmb)
+#     original = copyFrom
+#     target = "{0}\\{1}".format(path, fileName)
+#     shutil.copy(original, target)
+
+
+def FIOexecutionBPC0(server, user, passd, dirx, fio, data_a, hmb):
+
+    log = [
+        "{0}\\logs\\burst_seqwr.log".format(localPath),
+        "{0}\\logs\\burst_seqrd.log".format(localPath),
+        "{0}\\logs\\sus_seqwr.log".format(localPath),
+        "{0}\\logs\\sus_seqrd.log".format(localPath),
+        "{0}\\logs\\burst_randwr.log".format(localPath),
+        "{0}\\logs\\burst_randrd.log".format(localPath),
+        "{0}\\logs\\burst_randwr_oio.log".format(localPath),
+        "{0}\\logs\\burst_randrd_oio.log".format(localPath),
+    ]
     
+    # firmware = data_a[0]
+    # capacity = data_a[1]
+
     # <<< DRIVE FORMAT >>>
     driveFormat(server, user, passd, dirx)
     status("FORMAT DONE!", 0.5)
@@ -49,36 +83,53 @@ def FIOexecutionBPC0(server, user, passd, dirx, fio):
     # <--------- BURST SEQUENTIAL WRITE --------->
     burst_seqwr(server, user, passd, dirx, fio[0])
     status("<--------- BURST SEQUENTIAL WRITE is been implemented! --------->", 1)
+    logSaving("BPC0", hmb, data_a, "burst_seqwr", log[0])
+    status("<--------- LOG SAVED!!! --------->", 1)
 
     # <--------- BURST SEQUENTIAL READ --------->
     burst_seqrd(server, user, passd, dirx, fio[1])
     status("<--------- BURST SEQUENTIAL READ is been implemented! --------->", 1)
+    logSaving("BPC0", hmb, data_a, "burst_seqrd", log[1])
+    status("<--------- LOG SAVED!!! --------->", 1)
 
     # <--------- SUSTAINED SEQUENTIAL WRITE --------->
     sus_seqwr(server, user, passd, dirx, fio[2])
     status("<--------- SUSTAINED SEQUENTIAL WRITE is been implemented! --------->", 1)
+    logSaving("BPC0", hmb, data_a, "sus_seqwr", log[2])
+    status("<--------- LOG SAVED!!! --------->", 1)
 
     # <--------- SUSTAINED SEQUENTIAL READ --------->
     sus_seqrd(server, user, passd, dirx, fio[3])
     status("<--------- SUSTAINED SEQUENTIAL READ is been implemented! --------->", 1)
+    logSaving("BPC0", hmb, data_a, "sus_seqrd", log[3])
+    status("<--------- LOG SAVED!!! --------->", 1)
 
     # <--------- BURST RANDOM WRITE --------->
     burst_randwr(server, user, passd, dirx, fio[4])
     status("<--------- BURST RANDOM WRITE is been implemented! --------->", 1)
+    logSaving("BPC0", hmb, data_a, "burst_randwr", log[4])
+    status("<--------- LOG SAVED!!! --------->", 1)
 
     # <--------- BURST RANDOM READ --------->
     burst_randrd(server, user, passd, dirx, fio[5])
     status("<--------- BURST RANDOM READ is been implemented! --------->", 1)
+    logSaving("BPC0", hmb, data_a, "burst_randrd", log[5])
+    status("<--------- LOG SAVED!!! --------->", 1)
 
     # <--------- BURST RANDOM WRITE OIO --------->
     burst_randwr_oio(server, user, passd, dirx, fio[6])
     status("<--------- BURST RANDOM WRITE OIO is been implemented! --------->", 1)
+    logSaving("BPC0", hmb, data_a, "burst_randwr_oio", log[6])
+    status("<--------- LOG SAVED!!! --------->", 1)
 
     # <--------- BURST RANDOM READ OIO --------->
     burst_randrd_oio(server, user, passd, dirx, fio[7])
     status("<--------- BURST RANDOM READ OIO is been implemented! --------->", 1)
+    logSaving("BPC0", hmb, data_a, "burst_randrd_oio", log[7])
+    status("<--------- LOG SAVED!!! --------->", 1)
 
-def ExeBPC0(Userserver,hmb):
+
+def ExeBPC0(Userserver, hmb):
 
     server = Userserver
     user = "root"
@@ -87,27 +138,27 @@ def ExeBPC0(Userserver,hmb):
     dirx = "/root/fio/"
     # C:\\Users\\1000300665\\Desktop\\FVT\PBM\\Performance_Benchmark_Automaton\fioScripts\burst_randrd_oio.txt
     fio = [
-    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_seqrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\sus_seqrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randwr_oio.txt",
-    "C:\\Users\\1000300665\\Desktop\\FVT\\PBM\\Performance_Benchmark_Automaton\\fioScripts\\burst_randrd_oio.txt",
+        "{0}\\fioScripts\\burst_seqwr.txt".format(localPath),
+        "{0}\\fioScripts\\burst_seqrd.txt".format(localPath),
+        "{0}\\fioScripts\\sus_seqwr.txt".format(localPath),
+        "{0}\\fioScripts\\sus_seqrd.txt".format(localPath),
+        "{0}\\fioScripts\\burst_randwr.txt".format(localPath),
+        "{0}\\fioScripts\\burst_randrd.txt".format(localPath),
+        "{0}\\fioScripts\\burst_randwr_oio.txt".format(localPath),
+        "{0}\\fioScripts\\burst_randrd_oio.txt".format(localPath),
     ]
 
     # <--------- testing-fio script --------->
     x = ["C:\\Users\\1000300665\\Desktop\\FVT\\Performance_Benchmark_Automaton\\preCondition\\x.sh"]
     y = ["Performance_Benchmark_Automaton\\preCondition\\bpc1.bash"]
-    
+
     # ............................. <<< Controler Identify >>>  ............................. #
     identifyCtrl(server, user, passd, dirx)
     data_a = parseControlerData()  # single list data
     status("<--------- Controler Identify Data Structure is been implemented! --------->", 1)
 
     # ............................. <<< FIO SCRIPT EXECUTION >>>.............................
-    FIOexecutionBPC0(server, user, passd, dirx, fio)
+    FIOexecutionBPC0(server, user, passd, dirx, fio, data_a, hmb)
 
     # ............................. <<< PERFORMANCE ENTRY DATA COLLECTION >>> ............................. #
     data_b = performanceEntry()  # list of list data
@@ -117,10 +168,9 @@ def ExeBPC0(Userserver,hmb):
     data_c = infoScriptEntry(fio)  # list of list data
     status("<--------- Script Entry Data Completed! --------->", 1)
 
-
     final = [data_a, data_b, data_c]
     # print(final)
-    excelPlot(final,"BPC0",hmb)
+    excelPlot(final, "BPC0", hmb)
     status("<--------- Excel Ready! --------->", 1)
-    
+
 # ExeBPC0("10.207.53.94","HMB_ON")

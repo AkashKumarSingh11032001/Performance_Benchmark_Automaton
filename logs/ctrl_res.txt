@@ -1,3 +1,3 @@
 Node             SN                   Model                                    Namespace Usage                      Format           FW Rev  
 ---------------- -------------------- ---------------------------------------- --------- -------------------------- ---------------- --------
-/dev/nvme0n1     S0000000             DemeterSSD-PF0                           1           1.02  TB /   1.02  TB    512   B +  0 B   FC3.3   
+/dev/nvme0n1     S0000000             DemeterSSD-PF0                           1         512.11  GB / 512.11  GB    512   B +  0 B   FC3.3   

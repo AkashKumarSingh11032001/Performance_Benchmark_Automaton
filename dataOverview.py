@@ -1,7 +1,7 @@
 import xlsxwriter
 from os.path import dirname
 
-localPath= dirname(__file__)
+localPath = dirname(__file__)
 
 # data_a = [Firmware, capacity]
 # data_b = [Iops, Bandwidth, AVg. latecy, 50th-99.9999th ]
@@ -34,19 +34,22 @@ data_X = [
 ]
 
 
-def excelPlot(data,opr,hmb):
-    # data[0][1]
-
-    excelName = data[0][0] + "_" + "1TB" + "_" + opr + "_" + hmb +".xlsx" #"FC3.1_BPC1_1.xlsx"
-    workbook = xlsxwriter.Workbook("{0}\\results\\{1}".format(localPath,excelName))
+def excelPlot(data, opr, hmb):
+        
+    excelName = data[0][0] + "_" + data[0][1] + "_" + \
+        opr + "_" + hmb + ".xlsx"  # "FC3.1_BPC1_1.xlsx"
+    workbook = xlsxwriter.Workbook(
+        "{0}\\results\\{1}\\{2}".format(localPath, data[0][0], excelName))
     worksheet = workbook.add_worksheet()
-    
-    Cellformat_1 = workbook.add_format({'border': 2,'italic': True,'center_across': True})
+
+    Cellformat_1 = workbook.add_format(
+        {'border': 2, 'italic': True, 'center_across': True})
     Cellformat_2 = workbook.add_format({'border': 3})
     Cellformat_3 = workbook.add_format({'border': 1})
-    heading = workbook.add_format({'border': 2,'bold': True})
-    heading_2 = workbook.add_format({'border': 2,'bold': True,'center_across': True})
-    
+    heading = workbook.add_format({'border': 2, 'bold': True})
+    heading_2 = workbook.add_format(
+        {'border': 2, 'bold': True, 'center_across': True})
+
     bpc_state = opr
 
     # Drive Standard Configuration.
@@ -227,7 +230,7 @@ def excelPlot(data,opr,hmb):
     worksheet.write("N13", data[1][fileIndex][7], Cellformat_1)
     worksheet.write("O13", data[1][fileIndex][8], Cellformat_1)
     worksheet.write("P13", data[1][fileIndex][9], Cellformat_1)
-    
+
     # workbook.save()
     workbook.close()
 

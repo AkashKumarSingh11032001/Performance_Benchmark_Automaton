@@ -16,7 +16,11 @@ def parseControlerData():
  
     mylines = stringToList(mylines[2], " ") 
     print(mylines)
-    capacity = mylines[5] + " " + mylines[6] 
+    if mylines[4].startswith("512"):
+        capacity = mylines[4] + " " + mylines[5] 
+    else:
+        capacity = mylines[5] + " " + mylines[6] 
+        
     firmware = mylines[-2] 
 
     print("Firmware Rev. : ".format(firmware))

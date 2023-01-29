@@ -9,6 +9,8 @@ from BPC1 import bpc1
 localPath = dirname(__file__)
 # print("{}\\burst.txt".format(x))
 
+# Firmware_release = input("\nPlease Enter Firmware Release(eg. FC3 / FC3.3): ")
+
 user_server = input("\nPlease Enter Ip address: ")
 
 print("\n1 - BPC1")
@@ -38,6 +40,7 @@ elif Opr == "2":
     ExeBPC0(user_server, "HMB_ON")
     print("\n<<<<<<<< BPC1 Triggered! >>>>>>>>\n")
     ExeBPC1(user_server, "HMB_ON")
+
 
     # <<<<< HMB Condition >>>>>
     print("\n|||||||||||||||||||||\n")
