@@ -34,7 +34,7 @@ def logSaving(bpc, hmb, data_a, fileName, copyFrom):
         print("The new directory with {0}\{1} is created!".format(firmwareFolder,capacity))
 
     # copy file "original loc" to "target loc"
-    fileName = "{0}_{1}_{2}.log".format(fileName, bpc, hmb)
+    fileName = "{0}_{1}_{2}.txt".format(fileName, bpc, hmb)
     original = copyFrom
     target = "{0}\\{1}".format(path, fileName)
     shutil.copy(original, target)
