@@ -7,9 +7,6 @@ from os.path import dirname
 from BPC1 import bpc1
 
 localPath = dirname(__file__)
-# print("{}\\burst.txt".format(x))
-
-# Firmware_release = input("\nPlease Enter Firmware Release(eg. FC3 / FC3.3): ")
 
 user_server = input("\nPlease Enter Ip address: ")
 
