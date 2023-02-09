@@ -74,8 +74,8 @@ def infoScriptEntry(fio):
     return proData_3
 
 
-# x = infoScriptEntry(fio)
-# print(x)
+x = infoScriptEntry(fio)
+print(x)
         
 # print([ele for ele in mylines if "bs=" in ele])
         
